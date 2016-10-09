@@ -1,0 +1,1209 @@
+
+          <style>
+                body {
+                color: #5D5F63;
+                font-family: 'Open Sans', sans-serif;
+                padding: 0;
+                margin: 0;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+              }
+              .sidebar-toggle {
+                margin-left: -240px;
+              }
+              .sidebar {
+                width: 240px;
+                height: 100%;
+                background: #293949;
+                position: absolute;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                -ms-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                z-index: 100;
+              }
+              .sidebar #leftside-navigation ul,
+              .sidebar #leftside-navigation ul ul {
+                margin: -2px 0 0;
+                padding: 0;
+              }
+              .sidebar #leftside-navigation ul li {
+                list-style-type: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+              }
+              .sidebar #leftside-navigation ul li.active > a {
+                color: #1abc9c;
+              }
+              .sidebar #leftside-navigation ul li.active ul {
+                display: block;
+              }
+              .sidebar #leftside-navigation ul li a {
+                color: #aeb2b7;
+                text-decoration: none;
+                display: block;
+                padding: 18px 0 18px 25px;
+                font-size: 12px;
+                outline: 0;
+                -webkit-transition: all 200ms ease-in;
+                -moz-transition: all 200ms ease-in;
+                -o-transition: all 200ms ease-in;
+                -ms-transition: all 200ms ease-in;
+                transition: all 200ms ease-in;
+              }
+              .sidebar #leftside-navigation ul li a:hover {
+                color: #1abc9c;
+              }
+              .sidebar #leftside-navigation ul li a span {
+                display: inline-block;
+              }
+              .sidebar #leftside-navigation ul li a i {
+                width: 20px;
+              }
+              .sidebar #leftside-navigation ul li a i .fa-angle-left,
+              .sidebar #leftside-navigation ul li a i .fa-angle-right {
+                padding-top: 3px;
+              }
+              .sidebar #leftside-navigation ul ul {
+                display: none;
+              }
+              .sidebar #leftside-navigation ul ul li {
+                background: #23313f;
+                margin-bottom: 0;
+                margin-left: 0;
+                margin-right: 0;
+                border-bottom: none;
+              }
+              .sidebar #leftside-navigation ul ul li a {
+                font-size: 12px;
+                padding-top: 13px;
+                padding-bottom: 13px;
+                color: #aeb2b7;
+              }
+
+              </style>
+
+              <style>
+                .md-toolbar-tools h1 {
+                font-size: inherit;
+                font-weight: inherit;
+                margin: inherit;
+              }
+              </style>
+<h1> test code below this </h1>
+<style>
+@media screen and (max-width: 700px) {
+   body {
+      padding: 170px 0 0 0;
+      width: 100%
+   }
+}
+
+a {
+   color: inherit;
+}
+
+.menu-item,
+.menu-open-button {
+   background: #EEEEEE;
+   border-radius: 100%;
+   width: 80px;
+   height: 80px;
+   margin-left: -930px;
+   margin-top: 400px;
+   position: fixed;
+   color: #FFFFFF;
+   text-align: center;
+   line-height: 80px;
+   -webkit-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+   -webkit-transition: -webkit-transform ease-out 200ms;
+   transition: -webkit-transform ease-out 200ms;
+   transition: transform ease-out 200ms;
+   transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+}
+
+.menu-open {
+   display: none;
+}
+
+.lines {
+   width: 25px;
+   height: 3px;
+   background: #596778;
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-left: -12.5px;
+   margin-top: -1.5px;
+   -webkit-transition: -webkit-transform 200ms;
+   transition: -webkit-transform 200ms;
+   transition: transform 200ms;
+   transition: transform 200ms, -webkit-transform 200ms;
+}
+
+.line-1 {
+   -webkit-transform: translate3d(0, -8px, 0);
+   transform: translate3d(0, -8px, 0);
+}
+
+.line-2 {
+   -webkit-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+}
+
+.line-3 {
+   -webkit-transform: translate3d(0, 8px, 0);
+   transform: translate3d(0, 8px, 0);
+}
+
+.menu-open:checked + .menu-open-button .line-1 {
+   -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+   transform: translate3d(0, 0, 0) rotate(45deg);
+}
+
+.menu-open:checked + .menu-open-button .line-2 {
+   -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+   transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+
+.menu-open:checked + .menu-open-button .line-3 {
+   -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+   transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+.menu {
+   margin: auto;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   width: 80px;
+   height: 80px;
+   text-align: center;
+   box-sizing: border-box;
+   font-size: 26px;
+}
+
+.menu-item:hover {
+   background: #EEEEEE;
+   color: #3290B1;
+}
+
+.menu-item:nth-child(3) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(4) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(5) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(6) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(7) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(8) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(9) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-open-button {
+   z-index: 2;
+   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   -webkit-transition-duration: 400ms;
+   transition-duration: 400ms;
+   -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+   transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+   cursor: pointer;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+}
+
+.menu-open-button:hover {
+   -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+   transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+
+.menu-open:checked + .menu-open-button {
+   -webkit-transition-timing-function: linear;
+   transition-timing-function: linear;
+   -webkit-transition-duration: 200ms;
+   transition-duration: 200ms;
+   -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+   transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+.menu-open:checked ~ .menu-item {
+   -webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+   transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(3) {
+   transition-duration: 180ms;
+   -webkit-transition-duration: 180ms;
+   -webkit-transform: translate3d(0.08361px, -104.99997px, 0);
+   transform: translate3d(0.08361px, -104.99997px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(4) {
+   transition-duration: 280ms;
+   -webkit-transition-duration: 280ms;
+   -webkit-transform: translate3d(90.9466px, -52.47586px, 0);
+   transform: translate3d(90.9466px, -52.47586px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(5) {
+   transition-duration: 380ms;
+   -webkit-transition-duration: 380ms;
+   -webkit-transform: translate3d(90.9466px, 52.47586px, 0);
+   transform: translate3d(90.9466px, 52.47586px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(6) {
+   transition-duration: 480ms;
+   -webkit-transition-duration: 480ms;
+   -webkit-transform: translate3d(0.08361px, 104.99997px, 0);
+   transform: translate3d(0.08361px, 104.99997px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(7) {
+   transition-duration: 580ms;
+   -webkit-transition-duration: 580ms;
+   -webkit-transform: translate3d(-90.86291px, 52.62064px, 0);
+   transform: translate3d(-90.86291px, 52.62064px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(8) {
+   transition-duration: 680ms;
+   -webkit-transition-duration: 680ms;
+   -webkit-transform: translate3d(-91.03006px, -52.33095px, 0);
+   transform: translate3d(-91.03006px, -52.33095px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(9) {
+   transition-duration: 780ms;
+   -webkit-transition-duration: 780ms;
+   -webkit-transform: translate3d(-0.25084px, -104.9997px, 0);
+   transform: translate3d(-0.25084px, -104.9997px, 0);
+}
+
+.blue {
+   background-color: #669AE1;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.blue:hover {
+   color: #669AE1;
+   text-shadow: none;
+}
+
+.green {
+   background-color: #70CC72;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.green:hover {
+   color: #70CC72;
+   text-shadow: none;
+}
+
+.red {
+   background-color: #FE4365;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.red:hover {
+   color: #FE4365;
+   text-shadow: none;
+}
+
+.purple {
+   background-color: #C49CDE;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.purple:hover {
+   color: #C49CDE;
+   text-shadow: none;
+}
+
+.orange {
+   background-color: #FC913A;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.orange:hover {
+   color: #FC913A;
+   text-shadow: none;
+}
+
+.lightblue {
+   background-color: #62C2E4;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.lightblue:hover {
+   color: #62C2E4;
+   text-shadow: none;
+}
+
+.credit {
+   margin: 24px 20px 120px 0;
+   text-align: right;
+   color: #EEEEEE;
+}
+
+.credit a {
+   padding: 8px 0;
+   color: #C49CDE;
+   text-decoration: none;
+   transition: all 0.3s ease 0s;
+}
+
+.credit a:hover {
+   text-decoration: underline;
+}
+
+  body{
+    margin-top:40px;
+}
+
+.stepwizard-step p {
+    margin-top: 10px;
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+
+
+
+
+.select-wrapper {
+	position: relative;
+}
+
+.select-wrapper select {
+	display: none;
+}
+
+.select-wrapper .select-btn {
+	display: block;
+	text-decoration: none;
+	padding: 1rem;
+	color: #333;
+}
+
+.select-wrapper .select-btn .caret {
+	font-size: 1.25rem;
+	right: 1rem;
+}
+
+.select-wrapper .select-list {
+	display: none;
+	list-style: none;
+	background: white;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 99;
+}
+
+.select-wrapper .select-list span {
+	padding: .75rem;
+	display: block;
+}
+
+.select-wrapper .select-list span ~ li {
+	padding-left: 2rem !important;
+}
+
+.select-wrapper .select-list li.select-search {
+	height: 45px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-width: 1px 0 1px 0;
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.select-wrapper .select-list li.select-search .search-icon {
+	line-height: 45px;
+	font-size: 1.25rem;
+	margin-left: .75rem;
+}
+
+.select-wrapper .select-list li.select-search .search-clear {
+	display: none;
+	line-height: 45px;
+	font-size: 1.25rem;
+	margin-right: .75rem;
+	cursor: pointer;
+}
+
+.select-wrapper .select-list li.select-search input {
+	border: none;
+	border-radius: 0;
+	padding: .75rem 2.5rem 1rem;
+	background: transparent;
+}
+
+.select-wrapper .select-list li.empty-search {
+	padding: 1.5rem !important;
+	text-align: center;
+}
+
+.select-wrapper .select-list li:not(.select-search) {
+	padding: .75rem;
+	user-select: none;
+	cursor: pointer;
+}
+
+.select-wrapper .select-list li:not(.select-search):hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.select-wrapper .select-list li:not(.select-search).active {
+	background: rgba(0, 0, 0, 0.075);
+}
+/***
+Custom tables
+***/
+.table-toolbar {
+  margin-bottom: 20px; }
+  .table-toolbar:before, .table-toolbar:after {
+    content: " ";
+    display: table; }
+  .table-toolbar:after {
+    clear: both; }
+
+.table.table-full-width {
+  width: 100% !important; }
+
+.table .btn {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 5px; }
+
+.table thead tr th {
+  font-size: 14px;
+  font-weight: 600; }
+
+.table-advance {
+  margin-bottom: 10px !important; }
+
+.table-advance thead {
+  color: #3f444a; }
+
+.table-advance thead tr th {
+  background-color: #f1f4f7;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3f444a; }
+
+.table-advance div.success,
+.table-advance div.info,
+.table-advance div.important,
+.table-advance div.warning,
+.table-advance div.danger {
+  position: absolute;
+  margin-top: -5px;
+  float: left;
+  width: 2px;
+  height: 30px;
+  margin-right: 20px !important; }
+
+.table-advance tr td {
+  border-left-width: 0px; }
+
+.table-advance tr td:first-child {
+  border-left-width: 2px !important; }
+
+.table-advance tr td.highlight:first-child a {
+  margin-left: 15px; }
+
+.table-advance td.highlight div.primary {
+  border-left: 2px solid #337ab7; }
+
+.table-advance td.highlight div.success {
+  border-left: 2px solid #36c6d3; }
+
+.table-advance td.highlight div.info {
+  border-left: 2px solid #659be0; }
+
+.table-advance td.highlight div.warning {
+  border-left: 2px solid #F1C40F; }
+
+.table-advance td.highlight div.danger {
+  border-left: 2px solid #ed6b75; }
+
+@media (max-width: 767px) {
+  /* 767px */
+  .table-advance tr > td.highlight:first-child a {
+    margin-left: 8px; } }
+
+
+</style>
+
+<style type="text/css">
+    option.red {background-color: #cc0000; font-weight: bold; font-size: 12px;}
+    option.pink {background-color: #FFF;}
+</style>
+
+<!--OUR TEST CODE HERE -->
+<nav class="menu">
+   <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+   <label class="menu-open-button" for="menu-open"></label>
+   <a class="menu-item red" data-toggle="modal" href="#form_modal1"> <i class="fa fa-calendar"></i> </a>
+   <a class="menu-item orange" data-toggle="modal" href="#draggable"> <i class="fa fa-wechat"></i> </a>
+   <a class="menu-item lightblue" data-toggle="modal" href="#admin"> <i class="fa fa-diamond"></i> </a>
+</nav>
+<!--ends here -->
+
+<!--date time picker modal-->
+<div id="form_modal1" class="modal fade" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="margin-left: 0px; margin-top: 0px; width: 450px; height: 572px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Welcome!</h4>
+            </div>
+            <div class="modal-body" style="height: 880px">
+                    <%= render 'form' %>
+            </div>
+            <div class="modal-footer">
+                <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
+                <!--<button class="btn green btn-primary" data-dismiss="modal">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--end modal-->
+
+<!--modal2-->
+<div id="form_modal2" class="modal fade" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="margin-left: 210px; width: 1500px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Welcome!</h4>
+            </div>
+            <div class="modal-body" style="height: 830px">
+              <iframe src="https://appear.in/uvesty" width="1470" height="800" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
+                <!--<button class="btn green btn-primary" data-dismiss="modal">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--end modal-->
+
+<!--admin modal -->
+<head>
+  <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script data-require="bootstrap@*" data-semver="3.3.6" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
+</head>
+
+<body>
+  <!-- Modal -->
+  <div class="modal fade" id="admin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="width: 1500px; right: 450px">
+        <div class="modal-body" style="height: 800px">
+          <!--ADMIN START-->
+              <!--admin panel-->
+              <div class="container-admin" style="margin-left: 240px;">
+              <html lang="en" ng-app="StarterApp">
+                <body layout="column" ng-controller="AppCtrl">
+
+                  <md-toolbar layout="row">
+                    <div class="md-toolbar-tools">
+                      <h1>Uvesty Dashboard</h1>
+                    </div>
+                  </md-toolbar>
+
+                  <md-content layout="row" flex>
+                      <md-tabs label="Section 1" flex>
+                        <md-tab label="Finished" flex>
+                        </md-tab>
+              <!--end of first tab-->
+                        <md-tab label="Pending">
+                          <md-content layout-padding>
+                            <div>
+                              <!--tab 2 body -->
+                              <table class="table table-striped table-bordered table-advance table-hover">
+                                <tbody>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="success"></div>
+                                            <a href="javascript:;"> RedBull </a>
+                                        </td>
+                                        <td class="hidden-xs"> Mike Nilson </td>
+                                          <td> 2560.60$ </td>
+                                          <td> 2560.60$ </td>
+                                        <td style="width: 238px;">
+                                          <md-button class="md-raised md-primary">Primary</md-button>
+                                          <md-button class="md-raised md-warn">Warn</md-button
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="info"> </div>
+                                            <a href="javascript:;"> Google </a>
+                                        </td>
+                                        <td class="hidden-xs"> Adam Larson </td>
+                                          <td> 560.60$ </td>
+                                          <td> 2560.60$ </td>
+                                        <td style="width: 238px;">
+                                          <md-button class="md-raised md-primary">Primary</md-button>
+                                          <md-button class="md-raised md-warn">Warn</md-button
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="success"> </div>
+                                            <a href="javascript:;"> Apple </a>
+                                        </td>
+                                        <td class="hidden-xs"> Daniel Kim </td>
+                                          <td> 3460.60$ </td>
+                                          <td> 2560.60$ </td>
+                                        <td style="width: 238px;">
+                                          <md-button class="md-raised md-primary">Primary</md-button>
+                                          <md-button class="md-raised md-warn">Warn</md-button
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="warning"> </div>
+                                            <a href="javascript:;"> Microsoft </a>
+                                        </td>
+                                        <td class="hidden-xs"> Nick </td>
+                                          <td> 2560.60$ </td>
+                                          <td> 2560.60$ </td>
+                                        <td style="width: 238px;">
+                                          <md-button class="md-raised md-primary">Primary</md-button>
+                                          <md-button class="md-raised md-warn">Warn</md-button
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                              <!-- tab 2 body end -->
+                            </div>
+                          </md-content>
+                        </md-tab>
+              <!--end of second tab-->
+                        <md-tab label="Active">
+                          <md-content layout-padding>
+                            <div>
+                              <!--Section 3 body -->
+                              <div class="col-md-12">
+                                <div class="col-md-9">
+                              <iframe src="https://appear.in/your-room-name" width=700" height="600" frameborder="0"></iframe>
+                                </div>
+                                <div class="col-md-3">
+                                 div 6
+                                </div>
+                            </div>
+                              <!--Section 3 body end -->
+                            </div>
+                          </md-content>
+                        </md-tab>
+              <!--end of third tab-->
+                      </md-tabs>
+
+
+                  </md-content>
+
+                  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+                  <!-- Angular Material Dependencies -->
+                  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+                  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+                  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+
+                  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
+                </body>
+              </html>
+                </div>
+
+
+
+                <!--sidebar-->
+
+                  <aside class="sidebar" style="left: 0px; top: 0px">
+                    <div id="leftside-navigation" class="nano">
+                      <ul class="nano-content">
+                        <li class="active">
+                          <a href=""><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                        </li>
+                        <li class="sub-menu">
+                          <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>Partners</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                          <ul>
+
+                            <li><a href="">Masud Hossain (you)</a>
+                            </li>
+                            <li><a href="">Yusuf Shajahan</a>
+                            </li>
+                            <li><a href="">Stephen Hong</a>
+                            </li>
+                            <li><a href="">Jonathan Li</a>
+                          </ul>
+                        </li>
+                        <li class="sub-menu">
+                          <a href="javascript:void(0);"><i class="fa fa-table"></i><span>Tables</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                          <ul>
+                            <li><a href="tables-basic.html">Basic Tables</a>
+                            </li>
+
+                            <li><a href="tables-data.html">Data Tables</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="sub-menu">
+                          <a href="javascript:void(0);"><i class="fa fa fa-tasks"></i><span>Forms</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                          <ul>
+                            <li><a href="forms-components.html">Components</a>
+                            </li>
+                            <li><a href="forms-validation.html">Validation</a>
+                            </li>
+                            <li><a href="forms-mask.html">Mask</a>
+                            </li>
+                            <li><a href="forms-wizard.html">Wizard</a>
+                            </li>
+                            <li><a href="forms-multiple-file.html">Multiple File Upload</a>
+                            </li>
+                            <li><a href="forms-wysiwyg.html">WYSIWYG Editor</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="sub-menu">
+                          <a href="javascript:void(0);"><i class="fa fa-envelope"></i><span>Mail</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                          <ul>
+                            <li> <a href="mail-inbox.html">Inbox</a>
+                            </li>
+                            <li><a href="mail-compose.html">Compose Mail</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </aside>
+                </div>
+              </div>
+
+
+
+              <!--Side Bar -->
+              <script>
+                $("#leftside-navigation .sub-menu > a").click(function(e) {
+                $("#leftside-navigation ul ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
+                e.stopPropagation()
+              })
+              </script>
+              <!--Side Bar end -->
+
+
+              <!--admin panel -->
+              <script>
+                var app = angular.module('StarterApp', ['ngMaterial']);
+
+              app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
+                $scope.toggleSidenav = function(menuId) {
+                  $mdSidenav(menuId).toggle();
+                };
+
+                $scope.firstName = "Paul";
+
+                $scope.toggleExpansion = function toggleExpansion(sectionId) {
+                  var sectionToToggle = $("#" + sectionId);
+                  if (sectionToToggle.css("display") === "none") {
+                    $scope.expandSection(sectionToToggle);
+                  } else {
+                    $scope.collapseSection(sectionToToggle);
+                  }
+                };
+
+                $scope.collapseSectionById = function collapseSectionById(sectionId) {
+                  var sectionToCollapse = $("#" + sectionId);
+                  sectionToCollapse.css("display", "none");
+
+                };
+
+                $scope.collapseSection = function collapseSection(section) {
+                  section.css("display", "none");
+                }
+
+                $scope.expandSectionById = function expandSectionById(sectionId) {
+                  var sectionToExpand = $("#" + sectionId);
+                  sectionToExpand.css("display", "inline");
+                }
+
+                $scope.expandSection = function expandSection(section) {
+                  section.css("display", "inline");
+                }
+
+              }]);
+              </script>
+              <!--admin panel end-->
+                        <!--ADMIN END -->
+        </div>
+      </div>
+
+  <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+</body>
+
+
+
+<script>
+$('.modal-content').resizable({
+      //alsoResize: ".modal-dialog",
+      minHeight: 340,
+      minWidth: 340
+    });
+    $('.modal-dialog').draggable();
+
+    $('#myModal').on('show.bs.modal', function() {
+      $(this).find('.modal-body').css({
+        'max-height': '100%'
+      });
+    });
+</script>
+
+<script>
+/*!
+ * Selectbox Plugin by Rapzac
+ * What does it do
+ */
+(function($) {
+
+	$.fn.hasParent = function(objs) {
+  	// ensure that objs is a jQuery array
+	  objs = $(objs); var found = false;
+	  $(this[0]).parents().andSelf().each(function() {
+		 if ($.inArray(this, objs) != -1) {
+			found = true;
+			return false; // stops the each...
+		 }
+	  });
+	  return found;
+	}
+
+	$.fn.meta_select = function(options, callback) {
+
+		// default configuration
+		var config = $.extend({}, {
+			activeClass: 'active',
+			search: true,
+			emptySearchText: 'Ingen Resultat',
+
+			caret: 'chevron-down',
+
+			// Animation Configs
+			animation: true,
+			showAnimation: 'zoomIn',
+			hideAnimation: 'zoomOut',
+			speed: 0.2
+		}, options);
+
+		// Global Variables
+		var self = this,
+			 caret = '<i class="mdi mdi-'+config.caret+' caret"></i>',
+			 multiple = self.attr('multiple') != undefined ? true : false;
+			 height = this.height;
+
+		// initialize every element
+		this.each(function() {
+			var that = $(this);
+
+			that.wrap('<div class="select-wrapper"></div>');
+			that.after(list(that));
+			that.after('<a href="#" class="select-btn">'+starting_value(that)+caret+'</a>');
+
+			if(config.search){
+
+				var html = "";
+
+				html += '<li class="select-search">';
+				html += '<i class="mdi mdi-magnify search-icon"></i>';
+				html += '<input type="search">';
+				html += '<i class="mdi mdi-close search-clear"></i>';
+				html += '</li>';
+
+				that.siblings('.select-list').prepend(html);
+			}
+
+			if(config.animation){
+				that.siblings('.select-list').addClass('animated').css({
+					'-webkit-animation-duration': config.speed+'s', /* Chrome, Safari, Opera */
+    				'animation-duration': config.speed+'s'
+				});
+			}
+		});
+
+
+		// Helper Functions
+
+		function starting_value(element){
+			var selected = element.find('option:selected').text()
+
+			return selected != undefined ? selected : element.find('option:first').text();
+		}
+
+		function generate_id(length) {
+			 var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
+
+			 if (! length) {
+				  length = Math.floor(Math.random() * chars.length);
+			 }
+
+			 var str = '';
+			 for (var i = 0; i < length; i++) {
+				  str += chars[Math.floor(Math.random() * chars.length)];
+			 }
+			 return str;
+		}
+
+		function list(element){
+			var html = '<ul class="select-list">';
+
+			element.find('option').each(function(){
+				var id = generate_id(10),
+					 text = $(this).html(),
+					 value = $(this).attr('value');
+
+				if(!$(this).hasParent('optgroup')){
+
+					$(this).attr('select-id', id);
+
+					html += '<li value="'+value+'" select-id="'+id+'">'+text+'</li>';
+				}
+
+			});
+
+			element.find('optgroup').each(function(){
+				var group_name = $(this).attr('label');
+
+				html += '<span>'+group_name+'</span>';
+
+				$(this).find('option').each(function(){
+					var id = generate_id(10),
+						 text = $(this).html(),
+						 value = $(this).attr('value');
+
+					$(this).attr('select-id', id);
+
+					html += '<li value="'+value+'" select-id="'+id+'">'+text+'</li>';
+				});
+			});
+
+
+			html += '</ul>';
+
+			return html;
+		}
+
+		function miliseconds(seconds){
+			return seconds*1000;
+		}
+
+		// Click Events
+		self.closest('.select-wrapper').find('.select-btn').on('click', function(e){
+			e.preventDefault();
+
+			var selected = self.val(),
+				 list = $(this).siblings('.select-list'),
+				 target = list.find('[value="'+selected+'"]');
+
+			if(list.is(':visible')){
+				list.removeClass(config.showAnimation).addClass(config.hideAnimation);
+
+				setTimeout(function(){
+					list.hide();
+				}, miliseconds(config.speed));
+			} else {
+				list.show().removeClass(config.hideAnimation).addClass(config.showAnimation);
+			}
+
+			target.addClass(config.activeClass);
+			target.siblings().removeClass(config.activeClass);
+		});
+
+		self.closest('.select-wrapper').find('ul li:not(.select-search):not(.empty-search)').on('click', function(e){
+			e.stopPropagation();
+
+			var that = $(this),
+				 parent = that.closest('.select-wrapper'),
+				 id = $(this).attr('select-id'),
+				 selected = parent.find('select').val(),
+				 target = parent.find('select option[select-id="'+id+'"]'),
+				 holder = parent.find('a.select-btn'),
+				 list = parent.find('.select-list');
+
+			// Update Holder
+			holder.html(target.html()+caret);
+
+			// Hide Selection list
+			list.removeClass(config.showAnimation).addClass(config.hideAnimation);
+
+			setTimeout(function(){
+				list.hide();
+			}, miliseconds(config.speed));
+
+			// Change Selected Value on hiding select
+			target.prop('selected', true);
+			target.siblings().prop('selected', false);
+		});
+
+
+		$(document).on('keyup', '.select-wrapper .select-search > input', function(){
+			var searchtext = $(this).val(),
+				 parent = $(this).closest('.select-search'),
+				 contain = parent.siblings('li:Contains('+searchtext+')');
+
+			// Siblings which dont match value
+			parent.siblings('li:not(:Contains('+searchtext+'))').hide();
+
+			parent.siblings('li').each(function(){
+				var id = $(this).attr('select-id'),
+					 original = $(this).closest('.select-wrapper').find('.select-list > li[select-id="'+id+'"]');
+
+				if(original.hasParent('optgroup')){
+					parent.siblings('li:not(:Contains('+searchtext+'))').hide();
+				}
+			});
+
+			// Siblings with Matching Value
+			if(contain.length > 0){
+				parent.siblings('li.empty-search').remove();
+				contain.show();
+			} else {
+				parent.after('<li class="empty-search">'+config.emptySearchText+'</li>');
+			}
+
+			if(searchtext != ''){
+				parent.find('.search-clear').show();
+			} else {
+				parent.find('.search-clear').hide();
+			}
+		});
+
+		$(document).on('click', '.select-wrapper .select-search .search-clear', function(){
+			$(this).siblings('input').val('');
+			$(this).siblings('input').keyup();
+			$(this).siblings('input').focus();
+		});
+
+		return this;
+	};
+
+	// Contains filter pseudo selector
+	// non-case-sensitive Contains selector
+	jQuery.expr[':'].Contains = function(a,i,m){
+		return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
+	};
+
+})(jQuery);
+
+
+$(document).ready(function(){
+	$('.select-custom').meta_select({
+		activeClass: 'active', // item active class
+
+		search: false, // Enable Search
+		emptySearchText: 'Ingen Resultat', // Search: No Result text
+
+		animation: true, // Enable Animations
+		showAnimation: 'zoomIn', // Animation On Show
+		hideAnimation: 'zoomOut', // Animation On Hide
+		speed: .1, // Animation Speed in Seconds
+	});
+
+	$('.select-custom-search').meta_select({
+		activeClass: 'active', // item active class
+
+		search: true, // Enable Search
+		emptySearchText: 'Ingen Resultat', // Search: No Result text
+
+		animation: true, // Enable Animations
+		showAnimation: 'zoomIn', // Animation On Show
+		hideAnimation: 'zoomOut', // Animation On Hide
+		speed: .1, // Animation Speed in Seconds
+	});
+});
+</script>
