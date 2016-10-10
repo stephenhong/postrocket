@@ -621,6 +621,9 @@ Custom tables
     option.pink {background-color: #FFF;}
 </style>
 
+
+
+
 <!--OUR TEST CODE HERE -->
 <nav class="menu">
    <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
@@ -660,7 +663,27 @@ Custom tables
                 <h4 class="modal-title">Welcome!</h4>
             </div>
             <div class="modal-body" style="height: 830px">
-              <iframe src="https://appear.in/uvesty" width="1470" height="800" frameborder="0"></iframe>
+              <!--<iframe src="https://appear.in/uvesty" width="1470" height="800" frameborder="0"></iframe>-->
+            </div>
+            <div class="modal-footer">
+                <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
+                <!--<button class="btn green btn-primary" data-dismiss="modal">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--end modal-->
+
+<!--modal2-->
+<div id="draggable" class="modal fade" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="margin-left: 210px; width: 1500px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Welcome!</h4>
+            </div>
+            <div class="modal-body" style="height: 830px">
+
             </div>
             <div class="modal-footer">
                 <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -773,10 +796,594 @@ Custom tables
                               <!--Section 3 body -->
                               <div class="col-md-12">
                                 <div class="col-md-9">
-                              <iframe src="https://appear.in/your-room-name" width=700" height="600" frameborder="0"></iframe>
+                              <!--<iframe src="https://appear.in/your-room-name" width=700" height="600" frameborder="0"></iframe>-->
                                 </div>
-                                <div class="col-md-3">
-                                 div 6
+                                <div class="col-md-3" style="height: 500px;">
+                                    <style>
+/*--------------------
+Mixins
+--------------------*/
+/*--------------------
+Body
+--------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: -webkit-linear-gradient(315deg, #044f48, #2a7561);
+  background: linear-gradient(135deg, #044f48, #2a7561);
+  background-size: cover;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  line-height: 1.3;
+  overflow: hidden;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: url("https://images.unsplash.com/photo-1451186859696-371d9477be93?crop=entropy&fit=crop&fm=jpg&h=975&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925") no-repeat 0 0;
+  -webkit-filter: blur(80px);
+          filter: blur(80px);
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+/*--------------------
+Chat
+--------------------*/
+.chat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+  height: 80vh;
+  max-height: 500px;
+  z-index: 2;
+  overflow: hidden;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/*--------------------
+Chat Title
+--------------------*/
+.chat-title {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 45px;
+      -ms-flex: 0 1 45px;
+          flex: 0 1 45px;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 10px 10px 10px 50px;
+}
+.chat-title h1, .chat-title h2 {
+  font-weight: normal;
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+}
+.chat-title h2 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 8px;
+  letter-spacing: 1px;
+}
+.chat-title .avatar {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  left: 9px;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+}
+.chat-title .avatar img {
+  width: 100%;
+  height: auto;
+}
+
+/*--------------------
+Messages
+--------------------*/
+.messages {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  color: rgba(255, 255, 255, 0.5);
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.messages .messages-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 101%;
+  width: 100%;
+}
+.messages .message {
+  clear: both;
+  float: left;
+  padding: 6px 10px 7px;
+  border-radius: 10px 10px 10px 0;
+  background: rgba(0, 0, 0, 0.3);
+  margin: 8px 0;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-left: 35px;
+  position: relative;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.messages .message .timestamp {
+  position: absolute;
+  bottom: -15px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+}
+.messages .message::before {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  border-top: 6px solid rgba(0, 0, 0, 0.3);
+  left: 0;
+  border-right: 7px solid transparent;
+}
+.messages .message .avatar {
+  position: absolute;
+  z-index: 1;
+  bottom: -15px;
+  left: -35px;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+}
+.messages .message .avatar img {
+  width: 100%;
+  height: auto;
+}
+.messages .message.message-personal {
+  float: right;
+  color: #fff;
+  text-align: right;
+  background: -webkit-linear-gradient(330deg, #248A52, #257287);
+  background: linear-gradient(120deg, #248A52, #257287);
+  border-radius: 10px 10px 0 10px;
+}
+.messages .message.message-personal::before {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 5px solid transparent;
+  border-top: 4px solid #257287;
+  bottom: -4px;
+}
+.messages .message:last-child {
+  margin-bottom: 30px;
+}
+.messages .message.new {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-animation: bounce 500ms linear both;
+          animation: bounce 500ms linear both;
+}
+.messages .message.loading::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  margin-top: 4px;
+  -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+          animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  border: none;
+  -webkit-animation-delay: .15s;
+          animation-delay: .15s;
+}
+.messages .message.loading span {
+  display: block;
+  font-size: 0;
+  width: 20px;
+  height: 10px;
+  position: relative;
+}
+.messages .message.loading span::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  margin-top: 4px;
+  -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+          animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  margin-left: -7px;
+}
+.messages .message.loading span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  margin-top: 4px;
+  -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+          animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  margin-left: 7px;
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
+}
+
+/*--------------------
+Message Box
+--------------------*/
+.message-box {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 40px;
+      -ms-flex: 0 1 40px;
+          flex: 0 1 40px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  position: relative;
+}
+.message-box .message-input {
+  background: none;
+  border: none;
+  outline: none !important;
+  resize: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 11px;
+  height: 17px;
+  margin: 0;
+  padding-right: 20px;
+  width: 265px;
+}
+.message-box textarea:focus:-webkit-placeholder {
+  color: transparent;
+}
+.message-box .message-submit {
+  position: absolute;
+  z-index: 1;
+  top: 9px;
+  right: 10px;
+  color: #fff;
+  border: none;
+  background: #248A52;
+  font-size: 10px;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 10px;
+  outline: none !important;
+  -webkit-transition: background .2s ease;
+  transition: background .2s ease;
+}
+.message-box .message-submit:hover {
+  background: #1D7745;
+}
+
+/*--------------------
+Custom Srollbar
+--------------------*/
+.mCSB_scrollTools {
+  margin: 1px -3px 1px 0;
+  opacity: 0;
+}
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 0px;
+  padding: 0 10px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/*--------------------
+Bounce
+--------------------*/
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  4.7% {
+    -webkit-transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  9.41% {
+    -webkit-transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  14.11% {
+    -webkit-transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  18.72% {
+    -webkit-transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  24.32% {
+    -webkit-transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  29.93% {
+    -webkit-transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  35.54% {
+    -webkit-transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  41.04% {
+    -webkit-transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  52.15% {
+    -webkit-transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  63.26% {
+    -webkit-transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  85.49% {
+    -webkit-transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  100% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  4.7% {
+    -webkit-transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  9.41% {
+    -webkit-transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  14.11% {
+    -webkit-transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  18.72% {
+    -webkit-transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  24.32% {
+    -webkit-transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  29.93% {
+    -webkit-transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  35.54% {
+    -webkit-transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  41.04% {
+    -webkit-transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  52.15% {
+    -webkit-transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  63.26% {
+    -webkit-transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  85.49% {
+    -webkit-transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  100% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+}
+@-webkit-keyframes ball {
+  from {
+    -webkit-transform: translateY(0) scaleY(0.8);
+            transform: translateY(0) scaleY(0.8);
+  }
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+@keyframes ball {
+  from {
+    -webkit-transform: translateY(0) scaleY(0.8);
+            transform: translateY(0) scaleY(0.8);
+  }
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+
+</style>
+
+<!--CHAT HTML-->
+<div class="chat">
+  <div class="chat-title">
+    <h1>Fabio Ottaviani</h1>
+    <h2>Supah</h2>
+    <figure class="avatar">
+      <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>
+  </div>
+  <div class="messages">
+    <div class="messages-content"></div>
+  </div>
+  <div class="message-box">
+    <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+    <button type="submit" class="message-submit">Send</button>
+  </div>
+
+</div>
+<div class="bg"></div>
+    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
+
+<!--CHAT SCRIPT-->
+<script>
+var $messages = $('.messages-content'),
+    d, h, m,
+    i = 0;
+
+$(window).load(function() {
+  $messages.mCustomScrollbar();
+  setTimeout(function() {
+    fakeMessage();
+  }, 100);
+});
+
+function updateScrollbar() {
+  $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
+    scrollInertia: 10,
+    timeout: 0
+  });
+}
+
+function setDate(){
+  d = new Date()
+  if (m != d.getMinutes()) {
+    m = d.getMinutes();
+    $('<div class="timestamp">' + d.getHours() + ':' + m + '</div>').appendTo($('.message:last'));
+  }
+}
+
+function insertMessage() {
+  msg = $('.message-input').val();
+  if ($.trim(msg) == '') {
+    return false;
+  }
+  $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  setDate();
+  $('.message-input').val(null);
+  updateScrollbar();
+  setTimeout(function() {
+    fakeMessage();
+  }, 1000 + (Math.random() * 20) * 100);
+}
+
+$('.message-submit').click(function() {
+  insertMessage();
+});
+
+$(window).on('keydown', function(e) {
+  if (e.which == 13) {
+    insertMessage();
+    return false;
+  }
+})
+
+var Fake = [
+  'Hi there, I\'m Fabio and you?',
+  'Nice to meet you',
+  'How are you?',
+  'Not too bad, thanks',
+  'What do you do?',
+  'That\'s awesome',
+  'Codepen is a nice place to stay',
+  'I think you\'re a nice person',
+  'Why do you think that?',
+  'Can you explain?',
+  'Anyway I\'ve gotta go now',
+  'It was a pleasure chat with you',
+  'Time to make a new codepen',
+  'Bye',
+  ':)'
+]
+
+function fakeMessage() {
+  if ($('.message-input').val() != '') {
+    return false;
+  }
+  $('<div class="message loading new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  updateScrollbar();
+
+  setTimeout(function() {
+    $('.message.loading').remove();
+    $('<div class="message new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    setDate();
+    updateScrollbar();
+    i++;
+  }, 1000 + (Math.random() * 20) * 100);
+
+}
+</script>
+
                                 </div>
                             </div>
                               <!--Section 3 body end -->
@@ -869,67 +1476,66 @@ Custom tables
 
 
 
-              <!--Side Bar -->
-              <script>
-                $("#leftside-navigation .sub-menu > a").click(function(e) {
-                $("#leftside-navigation ul ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
-                e.stopPropagation()
-              })
-              </script>
-              <!--Side Bar end -->
+<!--Side Bar -->
+<script>
+  $("#leftside-navigation .sub-menu > a").click(function(e) {
+  $("#leftside-navigation ul ul").slideUp(), $(this).next().is(":visible") || $(this).next().slideDown(),
+  e.stopPropagation()
+})
+</script>
+<!--Side Bar end -->
 
 
-              <!--admin panel -->
-              <script>
-                var app = angular.module('StarterApp', ['ngMaterial']);
+<!--admin panel -->
+<script>
+  var app = angular.module('StarterApp', ['ngMaterial']);
 
-              app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
-                $scope.toggleSidenav = function(menuId) {
-                  $mdSidenav(menuId).toggle();
-                };
+app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav) {
+  $scope.toggleSidenav = function(menuId) {
+    $mdSidenav(menuId).toggle();
+  };
 
-                $scope.firstName = "Paul";
+  $scope.firstName = "Paul";
 
-                $scope.toggleExpansion = function toggleExpansion(sectionId) {
-                  var sectionToToggle = $("#" + sectionId);
-                  if (sectionToToggle.css("display") === "none") {
-                    $scope.expandSection(sectionToToggle);
-                  } else {
-                    $scope.collapseSection(sectionToToggle);
-                  }
-                };
+  $scope.toggleExpansion = function toggleExpansion(sectionId) {
+    var sectionToToggle = $("#" + sectionId);
+    if (sectionToToggle.css("display") === "none") {
+      $scope.expandSection(sectionToToggle);
+    } else {
+      $scope.collapseSection(sectionToToggle);
+    }
+  };
 
-                $scope.collapseSectionById = function collapseSectionById(sectionId) {
-                  var sectionToCollapse = $("#" + sectionId);
-                  sectionToCollapse.css("display", "none");
+  $scope.collapseSectionById = function collapseSectionById(sectionId) {
+    var sectionToCollapse = $("#" + sectionId);
+    sectionToCollapse.css("display", "none");
 
-                };
+  };
 
-                $scope.collapseSection = function collapseSection(section) {
-                  section.css("display", "none");
-                }
+  $scope.collapseSection = function collapseSection(section) {
+    section.css("display", "none");
+  }
 
-                $scope.expandSectionById = function expandSectionById(sectionId) {
-                  var sectionToExpand = $("#" + sectionId);
-                  sectionToExpand.css("display", "inline");
-                }
+  $scope.expandSectionById = function expandSectionById(sectionId) {
+    var sectionToExpand = $("#" + sectionId);
+    sectionToExpand.css("display", "inline");
+  }
 
-                $scope.expandSection = function expandSection(section) {
-                  section.css("display", "inline");
-                }
+  $scope.expandSection = function expandSection(section) {
+    section.css("display", "inline");
+  }
 
-              }]);
-              </script>
-              <!--admin panel end-->
-                        <!--ADMIN END -->
+}]);
+</script>
+<!--admin panel end-->
+<!--ADMIN END -->
         </div>
       </div>
 
   <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
 </body>
 
-
-
+<!--MODAL START-->
 <script>
 $('.modal-content').resizable({
       //alsoResize: ".modal-dialog",
@@ -945,265 +1551,3 @@ $('.modal-content').resizable({
     });
 </script>
 
-<script>
-/*!
- * Selectbox Plugin by Rapzac
- * What does it do
- */
-(function($) {
-
-	$.fn.hasParent = function(objs) {
-  	// ensure that objs is a jQuery array
-	  objs = $(objs); var found = false;
-	  $(this[0]).parents().andSelf().each(function() {
-		 if ($.inArray(this, objs) != -1) {
-			found = true;
-			return false; // stops the each...
-		 }
-	  });
-	  return found;
-	}
-
-	$.fn.meta_select = function(options, callback) {
-
-		// default configuration
-		var config = $.extend({}, {
-			activeClass: 'active',
-			search: true,
-			emptySearchText: 'Ingen Resultat',
-
-			caret: 'chevron-down',
-
-			// Animation Configs
-			animation: true,
-			showAnimation: 'zoomIn',
-			hideAnimation: 'zoomOut',
-			speed: 0.2
-		}, options);
-
-		// Global Variables
-		var self = this,
-			 caret = '<i class="mdi mdi-'+config.caret+' caret"></i>',
-			 multiple = self.attr('multiple') != undefined ? true : false;
-			 height = this.height;
-
-		// initialize every element
-		this.each(function() {
-			var that = $(this);
-
-			that.wrap('<div class="select-wrapper"></div>');
-			that.after(list(that));
-			that.after('<a href="#" class="select-btn">'+starting_value(that)+caret+'</a>');
-
-			if(config.search){
-
-				var html = "";
-
-				html += '<li class="select-search">';
-				html += '<i class="mdi mdi-magnify search-icon"></i>';
-				html += '<input type="search">';
-				html += '<i class="mdi mdi-close search-clear"></i>';
-				html += '</li>';
-
-				that.siblings('.select-list').prepend(html);
-			}
-
-			if(config.animation){
-				that.siblings('.select-list').addClass('animated').css({
-					'-webkit-animation-duration': config.speed+'s', /* Chrome, Safari, Opera */
-    				'animation-duration': config.speed+'s'
-				});
-			}
-		});
-
-
-		// Helper Functions
-
-		function starting_value(element){
-			var selected = element.find('option:selected').text()
-
-			return selected != undefined ? selected : element.find('option:first').text();
-		}
-
-		function generate_id(length) {
-			 var chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('');
-
-			 if (! length) {
-				  length = Math.floor(Math.random() * chars.length);
-			 }
-
-			 var str = '';
-			 for (var i = 0; i < length; i++) {
-				  str += chars[Math.floor(Math.random() * chars.length)];
-			 }
-			 return str;
-		}
-
-		function list(element){
-			var html = '<ul class="select-list">';
-
-			element.find('option').each(function(){
-				var id = generate_id(10),
-					 text = $(this).html(),
-					 value = $(this).attr('value');
-
-				if(!$(this).hasParent('optgroup')){
-
-					$(this).attr('select-id', id);
-
-					html += '<li value="'+value+'" select-id="'+id+'">'+text+'</li>';
-				}
-
-			});
-
-			element.find('optgroup').each(function(){
-				var group_name = $(this).attr('label');
-
-				html += '<span>'+group_name+'</span>';
-
-				$(this).find('option').each(function(){
-					var id = generate_id(10),
-						 text = $(this).html(),
-						 value = $(this).attr('value');
-
-					$(this).attr('select-id', id);
-
-					html += '<li value="'+value+'" select-id="'+id+'">'+text+'</li>';
-				});
-			});
-
-
-			html += '</ul>';
-
-			return html;
-		}
-
-		function miliseconds(seconds){
-			return seconds*1000;
-		}
-
-		// Click Events
-		self.closest('.select-wrapper').find('.select-btn').on('click', function(e){
-			e.preventDefault();
-
-			var selected = self.val(),
-				 list = $(this).siblings('.select-list'),
-				 target = list.find('[value="'+selected+'"]');
-
-			if(list.is(':visible')){
-				list.removeClass(config.showAnimation).addClass(config.hideAnimation);
-
-				setTimeout(function(){
-					list.hide();
-				}, miliseconds(config.speed));
-			} else {
-				list.show().removeClass(config.hideAnimation).addClass(config.showAnimation);
-			}
-
-			target.addClass(config.activeClass);
-			target.siblings().removeClass(config.activeClass);
-		});
-
-		self.closest('.select-wrapper').find('ul li:not(.select-search):not(.empty-search)').on('click', function(e){
-			e.stopPropagation();
-
-			var that = $(this),
-				 parent = that.closest('.select-wrapper'),
-				 id = $(this).attr('select-id'),
-				 selected = parent.find('select').val(),
-				 target = parent.find('select option[select-id="'+id+'"]'),
-				 holder = parent.find('a.select-btn'),
-				 list = parent.find('.select-list');
-
-			// Update Holder
-			holder.html(target.html()+caret);
-
-			// Hide Selection list
-			list.removeClass(config.showAnimation).addClass(config.hideAnimation);
-
-			setTimeout(function(){
-				list.hide();
-			}, miliseconds(config.speed));
-
-			// Change Selected Value on hiding select
-			target.prop('selected', true);
-			target.siblings().prop('selected', false);
-		});
-
-
-		$(document).on('keyup', '.select-wrapper .select-search > input', function(){
-			var searchtext = $(this).val(),
-				 parent = $(this).closest('.select-search'),
-				 contain = parent.siblings('li:Contains('+searchtext+')');
-
-			// Siblings which dont match value
-			parent.siblings('li:not(:Contains('+searchtext+'))').hide();
-
-			parent.siblings('li').each(function(){
-				var id = $(this).attr('select-id'),
-					 original = $(this).closest('.select-wrapper').find('.select-list > li[select-id="'+id+'"]');
-
-				if(original.hasParent('optgroup')){
-					parent.siblings('li:not(:Contains('+searchtext+'))').hide();
-				}
-			});
-
-			// Siblings with Matching Value
-			if(contain.length > 0){
-				parent.siblings('li.empty-search').remove();
-				contain.show();
-			} else {
-				parent.after('<li class="empty-search">'+config.emptySearchText+'</li>');
-			}
-
-			if(searchtext != ''){
-				parent.find('.search-clear').show();
-			} else {
-				parent.find('.search-clear').hide();
-			}
-		});
-
-		$(document).on('click', '.select-wrapper .select-search .search-clear', function(){
-			$(this).siblings('input').val('');
-			$(this).siblings('input').keyup();
-			$(this).siblings('input').focus();
-		});
-
-		return this;
-	};
-
-	// Contains filter pseudo selector
-	// non-case-sensitive Contains selector
-	jQuery.expr[':'].Contains = function(a,i,m){
-		return (a.textContent || a.innerText || "").toUpperCase().indexOf(m[3].toUpperCase())>=0;
-	};
-
-})(jQuery);
-
-
-$(document).ready(function(){
-	$('.select-custom').meta_select({
-		activeClass: 'active', // item active class
-
-		search: false, // Enable Search
-		emptySearchText: 'Ingen Resultat', // Search: No Result text
-
-		animation: true, // Enable Animations
-		showAnimation: 'zoomIn', // Animation On Show
-		hideAnimation: 'zoomOut', // Animation On Hide
-		speed: .1, // Animation Speed in Seconds
-	});
-
-	$('.select-custom-search').meta_select({
-		activeClass: 'active', // item active class
-
-		search: true, // Enable Search
-		emptySearchText: 'Ingen Resultat', // Search: No Result text
-
-		animation: true, // Enable Animations
-		showAnimation: 'zoomIn', // Animation On Show
-		hideAnimation: 'zoomOut', // Animation On Hide
-		speed: .1, // Animation Speed in Seconds
-	});
-});
-</script>
