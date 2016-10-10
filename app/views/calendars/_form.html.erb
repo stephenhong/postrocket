@@ -663,7 +663,7 @@ Custom tables
                 <h4 class="modal-title">Welcome!</h4>
             </div>
             <div class="modal-body" style="height: 830px">
-              <!--<iframe src="https://appear.in/uvesty" width="1470" height="800" frameborder="0"></iframe>-->
+              <iframe src="https://appear.in/uvesty" width="1070" height="800" frameborder="0"></iframe>
             </div>
             <div class="modal-footer">
                 <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -676,18 +676,25 @@ Custom tables
 
 <!--modal2-->
 <div id="draggable" class="modal fade" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" style="margin-left: 210px; width: 1500px">
+    <div class="modal-dialog" style="margin-left: 700px; margin-top: 200px; width: 480px">
         <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                <h4 class="modal-title">Welcome!</h4>
-            </div>
-            <div class="modal-body" style="height: 830px">
-
-            </div>
-            <div class="modal-footer">
-                <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
-                <!--<button class="btn green btn-primary" data-dismiss="modal">Save changes</button>-->
+                <!--<button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>-->
+            <div class="modal-body" style="height: 600px">
+                <div class="chat" style="width: 470px;">
+                    <div class="chat-title">
+                      <h1>Stephen Hong</h1>
+                      <h2>Installation Helper</h2>
+                      <figure class="avatar">
+                        <img src="http://image.prntscr.com/image/48f95e50eb9a49629e5c495795c1674d.png" /></figure>
+                    </div>
+                    <div class="messages">
+                      <div class="messages-content"></div>
+                    </div>
+                    <div class="message-box">
+                      <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+                      <button type="submit" class="message-submit">Send</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -713,13 +720,11 @@ Custom tables
               <div class="container-admin" style="margin-left: 240px;">
               <html lang="en" ng-app="StarterApp">
                 <body layout="column" ng-controller="AppCtrl">
-
                   <md-toolbar layout="row">
                     <div class="md-toolbar-tools">
                       <h1>Uvesty Dashboard</h1>
                     </div>
                   </md-toolbar>
-
                   <md-content layout="row" flex>
                       <md-tabs label="Section 1" flex>
                         <md-tab label="Finished" flex>
@@ -730,6 +735,21 @@ Custom tables
                             <div>
                               <!--tab 2 body -->
                               <table class="table table-striped table-bordered table-advance table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                          <i class="fa fa-briefcase"></i> Client </th>
+                                          <th>
+                                            <i class="fa fa-briefcase"></i> Assigned To </th>
+                                          <th>
+                                            <i class="fa fa-briefcase"></i> Waiting </th>
+                                          <th>
+                                            <i class="fa fa-user"></i> Contact </th>
+                                          <th>
+                                            <i class="fa fa-shopping-cart"></i> Actions </th>
+
+                                    </tr>
+                                </thead>
                                 <tbody>
                                     <tr>
                                         <td class="highlight">
@@ -796,10 +816,10 @@ Custom tables
                               <!--Section 3 body -->
                               <div class="col-md-12">
                                 <div class="col-md-9">
-                              <!--<iframe src="https://appear.in/your-room-name" width=700" height="600" frameborder="0"></iframe>-->
+                             <iframe src="https://appear.in/your-room-name" width="700" height="600" frameborder="0"></iframe>
                                 </div>
                                 <div class="col-md-3" style="height: 500px;">
-                                    <style>
+<style>
 /*--------------------
 Mixins
 --------------------*/
@@ -810,34 +830,6 @@ Body
 *::before,
 *::after {
   box-sizing: border-box;
-}
-
-html,
-body {
-  height: 100%;
-}
-
-body {
-  background: -webkit-linear-gradient(315deg, #044f48, #2a7561);
-  background: linear-gradient(135deg, #044f48, #2a7561);
-  background-size: cover;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 12px;
-  line-height: 1.3;
-  overflow: hidden;
-}
-
-.bg {
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  background: url("https://images.unsplash.com/photo-1451186859696-371d9477be93?crop=entropy&fit=crop&fm=jpg&h=975&ixjsv=2.1.0&ixlib=rb-0.3.5&q=80&w=1925") no-repeat 0 0;
-  -webkit-filter: blur(80px);
-          filter: blur(80px);
-  -webkit-transform: scale(1.2);
-          transform: scale(1.2);
 }
 
 /*--------------------
@@ -851,11 +843,10 @@ Chat
           transform: translate(-50%, -50%);
   width: 300px;
   height: 80vh;
-  max-height: 500px;
+  max-height: 600px;
   z-index: 2;
-  overflow: hidden;
+  overflow: auto;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 0, 0.5);
   border-radius: 20px;
   display: -webkit-box;
   display: -webkit-flex;
@@ -882,8 +873,7 @@ Chat Title
           flex: 0 1 45px;
   position: relative;
   z-index: 2;
-  background: rgba(0, 0, 0, 0.2);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.1);
   text-transform: uppercase;
   text-align: left;
   padding: 10px 10px 10px 50px;
@@ -895,7 +885,6 @@ Chat Title
   padding: 0;
 }
 .chat-title h2 {
-  color: rgba(255, 255, 255, 0.5);
   font-size: 8px;
   letter-spacing: 1px;
 }
@@ -925,8 +914,7 @@ Messages
   -webkit-flex: 1 1 auto;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  color: rgba(255, 255, 255, 0.5);
-  overflow: hidden;
+  overflow: auto;
   position: relative;
   width: 100%;
 }
@@ -942,13 +930,12 @@ Messages
   float: left;
   padding: 6px 10px 7px;
   border-radius: 10px 10px 10px 0;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   margin: 8px 0;
   font-size: 11px;
   line-height: 1.4;
   margin-left: 35px;
   position: relative;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
 .messages .message .timestamp {
   position: absolute;
@@ -960,7 +947,7 @@ Messages
   content: '';
   position: absolute;
   bottom: -6px;
-  border-top: 6px solid rgba(0, 0, 0, 0.3);
+  border-top: 6px solid rgba(0, 0, 0, 0.1);
   left: 0;
   border-right: 7px solid transparent;
 }
@@ -986,8 +973,9 @@ Messages
   color: #fff;
   text-align: right;
   background: -webkit-linear-gradient(330deg, #248A52, #257287);
-  background: linear-gradient(120deg, #248A52, #257287);
+  background: linear-gradient(120deg, #1AD6FD, #1D62F0);
   border-radius: 10px 10px 0 10px;
+  max-width: 100%
 }
 .messages .message.message-personal::before {
   left: auto;
@@ -1083,7 +1071,7 @@ Message Box
       -ms-flex: 0 1 40px;
           flex: 0 1 40px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   padding: 10px;
   position: relative;
 }
@@ -1092,12 +1080,10 @@ Message Box
   border: none;
   outline: none !important;
   resize: none;
-  color: rgba(255, 255, 255, 0.7);
   font-size: 11px;
-  height: 17px;
   margin: 0;
   padding-right: 20px;
-  width: 265px;
+  width: 400px;
 }
 .message-box textarea:focus:-webkit-placeholder {
   color: transparent;
@@ -1275,12 +1261,12 @@ Bounce
 </style>
 
 <!--CHAT HTML-->
-<div class="chat">
+<div class="chat" style="width: 470px; left: 80px; top: 300px">
   <div class="chat-title">
-    <h1>Fabio Ottaviani</h1>
-    <h2>Supah</h2>
+    <h1>Stephen Hong</h1>
+    <h2>Installation Helper</h2>
     <figure class="avatar">
-      <img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>
+      <img src="http://image.prntscr.com/image/48f95e50eb9a49629e5c495795c1674d.png" /></figure>
   </div>
   <div class="messages">
     <div class="messages-content"></div>
@@ -1292,7 +1278,7 @@ Bounce
 
 </div>
 <div class="bg"></div>
-    <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
 
 <!--CHAT SCRIPT-->
@@ -1349,14 +1335,13 @@ $(window).on('keydown', function(e) {
 })
 
 var Fake = [
-  'Hi there, I\'m Fabio and you?',
+  'Hi there, I\'m Stephen.',
   'Nice to meet you',
-  'How are you?',
-  'Not too bad, thanks',
-  'What do you do?',
-  'That\'s awesome',
-  'Codepen is a nice place to stay',
-  'I think you\'re a nice person',
+  'Did you need help installing?',
+  'Sure, no problem. Could you share your screen to expediate the process.',
+  'Awesome, thank you. Let\'s get to work.',
+  'Did you need any other help today?',
+  'Great! You\'ll get a survery after this. Have an awesome day.',
   'Why do you think that?',
   'Can you explain?',
   'Anyway I\'ve gotta go now',
@@ -1370,12 +1355,12 @@ function fakeMessage() {
   if ($('.message-input').val() != '') {
     return false;
   }
-  $('<div class="message loading new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  $('<div class="message loading new"><figure class="avatar"><img src="http://image.prntscr.com/image/48f95e50eb9a49629e5c495795c1674d.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
   updateScrollbar();
 
   setTimeout(function() {
     $('.message.loading').remove();
-    $('<div class="message new"><figure class="avatar"><img src="http://s3-us-west-2.amazonaws.com/s.cdpn.io/156381/profile/profile-80_4.jpg" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    $('<div class="message new"><figure class="avatar"><img src="http://image.prntscr.com/image/48f95e50eb9a49629e5c495795c1674d.png" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
     setDate();
     updateScrollbar();
     i++;
@@ -1550,4 +1535,3 @@ $('.modal-content').resizable({
       });
     });
 </script>
-
