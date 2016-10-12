@@ -1,390 +1,1525 @@
+
+          <style>
+                body {
+                color: #5D5F63;
+                font-family: 'Open Sans', sans-serif;
+                padding: 0;
+                margin: 0;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+              }
+              .sidebar-toggle {
+                margin-left: -240px;
+              }
+              .sidebar {
+                width: 240px;
+                height: 100%;
+                background: #293949;
+                position: absolute;
+                -webkit-transition: all 0.3s ease-in-out;
+                -moz-transition: all 0.3s ease-in-out;
+                -o-transition: all 0.3s ease-in-out;
+                -ms-transition: all 0.3s ease-in-out;
+                transition: all 0.3s ease-in-out;
+                z-index: 100;
+              }
+              .sidebar #leftside-navigation ul,
+              .sidebar #leftside-navigation ul ul {
+                margin: -2px 0 0;
+                padding: 0;
+              }
+              .sidebar #leftside-navigation ul li {
+                list-style-type: none;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+              }
+              .sidebar #leftside-navigation ul li.active > a {
+                color: #1abc9c;
+              }
+              .sidebar #leftside-navigation ul li.active ul {
+                display: block;
+              }
+              .sidebar #leftside-navigation ul li a {
+                color: #aeb2b7;
+                text-decoration: none;
+                display: block;
+                padding: 18px 0 18px 25px;
+                font-size: 12px;
+                outline: 0;
+                -webkit-transition: all 200ms ease-in;
+                -moz-transition: all 200ms ease-in;
+                -o-transition: all 200ms ease-in;
+                -ms-transition: all 200ms ease-in;
+                transition: all 200ms ease-in;
+              }
+              .sidebar #leftside-navigation ul li a:hover {
+                color: #1abc9c;
+              }
+              .sidebar #leftside-navigation ul li a span {
+                display: inline-block;
+              }
+              .sidebar #leftside-navigation ul li a i {
+                width: 20px;
+              }
+              .sidebar #leftside-navigation ul li a i .fa-angle-left,
+              .sidebar #leftside-navigation ul li a i .fa-angle-right {
+                padding-top: 3px;
+              }
+              .sidebar #leftside-navigation ul ul {
+                display: none;
+              }
+              .sidebar #leftside-navigation ul ul li {
+                background: #23313f;
+                margin-bottom: 0;
+                margin-left: 0;
+                margin-right: 0;
+                border-bottom: none;
+              }
+              .sidebar #leftside-navigation ul ul li a {
+                font-size: 12px;
+                padding-top: 13px;
+                padding-bottom: 13px;
+                color: #aeb2b7;
+              }
+
+              </style>
+
+              <style>
+                .md-toolbar-tools h1 {
+                font-size: inherit;
+                font-weight: inherit;
+                margin: inherit;
+              }
+              </style>
 <style>
-  body {
-  color: #5D5F63;
-  font-family: 'Open Sans', sans-serif;
-  padding: 0;
-  margin: 0;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
+@media screen and (max-width: 700px) {
+   body {
+      padding: 170px 0 0 0;
+      width: 100%
+   }
 }
-.sidebar-toggle {
-  margin-left: -240px;
+
+a {
+   color: inherit;
 }
-.sidebar {
-  width: 240px;
-  height: 100%;
-  background: #293949;
+
+.menu-item,
+.menu-open-button {
+   background: #ed2243;
+   border-radius: 100%;
+   width: 80px;
+   height: 80px;
+   margin-left: -930px;
+   margin-top: 400px;
+   position: fixed;
+   color: #FFFFFF;
+   text-align: center;
+   line-height: 80px;
+   -webkit-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+   -webkit-transition: -webkit-transform ease-out 200ms;
+   transition: -webkit-transform ease-out 200ms;
+   transition: transform ease-out 200ms;
+   transition: transform ease-out 200ms, -webkit-transform ease-out 200ms;
+}
+
+.menu-open {
+   display: none;
+}
+
+.lines {
+   width: 25px;
+   height: 3px;
+   background: #596778;
+   display: block;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   margin-left: -12.5px;
+   margin-top: -1.5px;
+   -webkit-transition: -webkit-transform 200ms;
+   transition: -webkit-transform 200ms;
+   transition: transform 200ms;
+   transition: transform 200ms, -webkit-transform 200ms;
+}
+
+.line-1 {
+   -webkit-transform: translate3d(0, -8px, 0);
+   transform: translate3d(0, -8px, 0);
+}
+
+.line-2 {
+   -webkit-transform: translate3d(0, 0, 0);
+   transform: translate3d(0, 0, 0);
+}
+
+.line-3 {
+   -webkit-transform: translate3d(0, 8px, 0);
+   transform: translate3d(0, 8px, 0);
+}
+
+.menu-open:checked + .menu-open-button .line-1 {
+   -webkit-transform: translate3d(0, 0, 0) rotate(45deg);
+   transform: translate3d(0, 0, 0) rotate(45deg);
+}
+
+.menu-open:checked + .menu-open-button .line-2 {
+   -webkit-transform: translate3d(0, 0, 0) scale(0.1, 1);
+   transform: translate3d(0, 0, 0) scale(0.1, 1);
+}
+
+.menu-open:checked + .menu-open-button .line-3 {
+   -webkit-transform: translate3d(0, 0, 0) rotate(-45deg);
+   transform: translate3d(0, 0, 0) rotate(-45deg);
+}
+
+.menu {
+   margin: auto;
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+   width: 80px;
+   height: 80px;
+   text-align: center;
+   box-sizing: border-box;
+   font-size: 26px;
+}
+
+.menu-item:hover {
+   background: #EEEEEE;
+   color: #3290B1;
+}
+
+.menu-item:nth-child(3) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(4) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(5) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(6) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(7) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(8) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-item:nth-child(9) {
+   -webkit-transition-duration: 180ms;
+   transition-duration: 180ms;
+}
+
+.menu-open-button {
+   z-index: 2;
+   -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+   -webkit-transition-duration: 400ms;
+   transition-duration: 400ms;
+   -webkit-transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+   transform: scale(1.1, 1.1) translate3d(0, 0, 0);
+   cursor: pointer;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+}
+
+.menu-open-button:hover {
+   -webkit-transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+   transform: scale(1.2, 1.2) translate3d(0, 0, 0);
+}
+
+.menu-open:checked + .menu-open-button {
+   -webkit-transition-timing-function: linear;
+   transition-timing-function: linear;
+   -webkit-transition-duration: 200ms;
+   transition-duration: 200ms;
+   -webkit-transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+   transform: scale(0.8, 0.8) translate3d(0, 0, 0);
+}
+
+.menu-open:checked ~ .menu-item {
+   -webkit-transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+   transition-timing-function: cubic-bezier(0.935, 0, 0.34, 1.33);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(3) {
+   transition-duration: 180ms;
+   -webkit-transition-duration: 180ms;
+   -webkit-transform: translate3d(0.08361px, -104.99997px, 0);
+   transform: translate3d(0.08361px, -104.99997px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(4) {
+   transition-duration: 280ms;
+   -webkit-transition-duration: 280ms;
+   -webkit-transform: translate3d(90.9466px, -52.47586px, 0);
+   transform: translate3d(90.9466px, -52.47586px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(5) {
+   transition-duration: 380ms;
+   -webkit-transition-duration: 380ms;
+   -webkit-transform: translate3d(90.9466px, 52.47586px, 0);
+   transform: translate3d(90.9466px, 52.47586px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(6) {
+   transition-duration: 480ms;
+   -webkit-transition-duration: 480ms;
+   -webkit-transform: translate3d(0.08361px, 104.99997px, 0);
+   transform: translate3d(0.08361px, 104.99997px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(7) {
+   transition-duration: 580ms;
+   -webkit-transition-duration: 580ms;
+   -webkit-transform: translate3d(-90.86291px, 52.62064px, 0);
+   transform: translate3d(-90.86291px, 52.62064px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(8) {
+   transition-duration: 680ms;
+   -webkit-transition-duration: 680ms;
+   -webkit-transform: translate3d(-91.03006px, -52.33095px, 0);
+   transform: translate3d(-91.03006px, -52.33095px, 0);
+}
+
+.menu-open:checked ~ .menu-item:nth-child(9) {
+   transition-duration: 780ms;
+   -webkit-transition-duration: 780ms;
+   -webkit-transform: translate3d(-0.25084px, -104.9997px, 0);
+   transform: translate3d(-0.25084px, -104.9997px, 0);
+}
+
+.blue {
+   background-color: #669AE1;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.blue:hover {
+   color: #669AE1;
+   text-shadow: none;
+}
+
+.green {
+   background-color: #70CC72;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.green:hover {
+   color: #70CC72;
+   text-shadow: none;
+}
+
+.red {
+   background-color: #FE4365;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.red:hover {
+   color: #FE4365;
+   text-shadow: none;
+}
+
+.purple {
+   background-color: #C49CDE;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.purple:hover {
+   color: #C49CDE;
+   text-shadow: none;
+}
+
+.orange {
+   background-color: #FC913A;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.orange:hover {
+   color: #FC913A;
+   text-shadow: none;
+}
+
+.lightblue {
+   background-color: #ed2243;
+   box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.twiliored {
+ background-color: #62C2E4;
+ box-shadow: 3px 3px 0 0 rgba(0, 0, 0, 0.14);
+ text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+.twiliored:hover {
+ color: #62C2E4;
+ text-shadow: none;
+}
+
+.lightblue:hover {
+   color: #62C2E4;
+   text-shadow: none;
+}
+
+.credit {
+   margin: 24px 20px 120px 0;
+   text-align: right;
+   color: #EEEEEE;
+}
+
+.credit a {
+   padding: 8px 0;
+   color: #C49CDE;
+   text-decoration: none;
+   transition: all 0.3s ease 0s;
+}
+
+.credit a:hover {
+   text-decoration: underline;
+}
+
+  body{
+    margin-top:40px;
+}
+
+.stepwizard-step p {
+    margin-top: 10px;
+}
+
+.stepwizard-row {
+    display: table-row;
+}
+
+.stepwizard {
+    display: table;
+    width: 100%;
+    position: relative;
+}
+
+.stepwizard-step button[disabled] {
+    opacity: 1 !important;
+    filter: alpha(opacity=100) !important;
+}
+
+.stepwizard-row:before {
+    top: 14px;
+    bottom: 0;
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 1px;
+    background-color: #ccc;
+    z-order: 0;
+
+}
+
+.stepwizard-step {
+    display: table-cell;
+    text-align: center;
+    position: relative;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+
+
+
+
+.select-wrapper {
+	position: relative;
+}
+
+.select-wrapper select {
+	display: none;
+}
+
+.select-wrapper .select-btn {
+	display: block;
+	text-decoration: none;
+	padding: 1rem;
+	color: #333;
+}
+
+.select-wrapper .select-btn .caret {
+	font-size: 1.25rem;
+	right: 1rem;
+}
+
+.select-wrapper .select-list {
+	display: none;
+	list-style: none;
+	background: white;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	width: 100%;
+	z-index: 99;
+}
+
+.select-wrapper .select-list span {
+	padding: .75rem;
+	display: block;
+}
+
+.select-wrapper .select-list span ~ li {
+	padding-left: 2rem !important;
+}
+
+.select-wrapper .select-list li.select-search {
+	height: 45px;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-align-items: center;
+	-ms-flex-align: center;
+	align-items: center;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-width: 1px 0 1px 0;
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.select-wrapper .select-list li.select-search .search-icon {
+	line-height: 45px;
+	font-size: 1.25rem;
+	margin-left: .75rem;
+}
+
+.select-wrapper .select-list li.select-search .search-clear {
+	display: none;
+	line-height: 45px;
+	font-size: 1.25rem;
+	margin-right: .75rem;
+	cursor: pointer;
+}
+
+.select-wrapper .select-list li.select-search input {
+	border: none;
+	border-radius: 0;
+	padding: .75rem 2.5rem 1rem;
+	background: transparent;
+}
+
+.select-wrapper .select-list li.empty-search {
+	padding: 1.5rem !important;
+	text-align: center;
+}
+
+.select-wrapper .select-list li:not(.select-search) {
+	padding: .75rem;
+	user-select: none;
+	cursor: pointer;
+}
+
+.select-wrapper .select-list li:not(.select-search):hover {
+	background: rgba(0, 0, 0, 0.05);
+}
+
+.select-wrapper .select-list li:not(.select-search).active {
+	background: rgba(0, 0, 0, 0.075);
+}
+/***
+Custom tables
+***/
+.table-toolbar {
+  margin-bottom: 20px; }
+  .table-toolbar:before, .table-toolbar:after {
+    content: " ";
+    display: table; }
+  .table-toolbar:after {
+    clear: both; }
+
+.table.table-full-width {
+  width: 100% !important; }
+
+.table .btn {
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 5px; }
+
+.table thead tr th {
+  font-size: 14px;
+  font-weight: 600; }
+
+.table-advance {
+  margin-bottom: 10px !important; }
+
+.table-advance thead {
+  color: #3f444a; }
+
+.table-advance thead tr th {
+  background-color: #f1f4f7;
+  font-size: 14px;
+  font-weight: 400;
+  color: #3f444a; }
+
+.table-advance div.success,
+.table-advance div.info,
+.table-advance div.important,
+.table-advance div.warning,
+.table-advance div.danger {
   position: absolute;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  z-index: 100;
+  margin-top: -5px;
+  float: left;
+  width: 2px;
+  height: 60px;
+  margin-right: 20px !important; }
+
+.table-advance tr td {
+  border-left-width: 0px; }
+
+.table-advance tr td:first-child {
+  border-left-width: 2px !important; }
+
+.table-advance tr td.highlight:first-child a {
+  margin-left: 15px; }
+
+.table-advance td.highlight div.primary {
+  border-left: 2px solid #337ab7; }
+
+.table-advance td.highlight div.success {
+  border-left: 2px solid #36c6d3; }
+
+.table-advance td.highlight div.info {
+  border-left: 2px solid #659be0; }
+
+.table-advance td.highlight div.warning {
+  border-left: 2px solid #F1C40F; }
+
+.table-advance td.highlight div.danger {
+  border-left: 2px solid #ed6b75; }
+
+@media (max-width: 767px) {
+  /* 767px */
+  .table-advance tr > td.highlight:first-child a {
+    margin-left: 8px; } }
+
+
+</style>
+
+<style type="text/css">
+    option.red {background-color: #cc0000; font-weight: bold; font-size: 12px;}
+    option.pink {background-color: #FFF;}
+</style>
+
+
+
+
+<!--OUR TEST CODE HERE -->
+<nav class="menu">
+   <input type="checkbox" href="#" class="menu-open" name="menu-open" id="menu-open" />
+   <!--<label class="menu-open-button" for="menu-open"><i class="fa fa-bars"></i></label>
+   <a class="menu-item green" data-toggle="modal" href="#form_modal1"> <i class="fa fa-calendar"></i> </a>-->
+   <!--<a class="menu-item orange" data-toggle="modal" href="#draggable"> <i class="fa fa-wechat"></i> </a>-->
+   <a class="menu-item lightblue" data-toggle="modal" href="#admin"> <i class="fa fa-pied-piper"></i> </a>
+</nav>
+<!--ends here -->
+
+<!--date time picker modal-->
+<div id="form_modal1" class="modal fade" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="margin-left: 0px; margin-top: 0px; width: 450px; height: 572px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Welcome!</h4>
+            </div>
+            <div class="modal-body" style="height: 880px">
+                    <%= render 'form' %>
+            </div>
+            <div class="modal-footer">
+                <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
+                <!--<button class="btn green btn-primary" data-dismiss="modal">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--end modal-->
+
+<!--modal2-->
+<div id="form_modal2" class="modal fade" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" style="margin-left: 210px; width: 1500px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                <h4 class="modal-title">Welcome!</h4>
+            </div>
+            <div class="modal-body" style="height: 830px">
+              <iframe src="https://appear.in/uvesty" width="1070" height="800" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
+                <!--<button class="btn green btn-primary" data-dismiss="modal">Save changes</button>-->
+            </div>
+        </div>
+    </div>
+</div>
+<!--end modal-->
+
+
+<!--admin modal -->
+<head>
+  <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script data-require="bootstrap@*" data-semver="3.3.6" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.3/themes/smoothness/jquery-ui.css" />
+</head>
+
+<body>
+  <!-- Modal -->
+  <div class="modal fade" id="admin" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content" style="width: 1500px; right: 450px">
+        <div class="modal-body" style="height: 800px">
+          <!--ADMIN START-->
+              <!--admin panel-->
+              <div class="container-admin" style="margin-left: 240px;">
+              <html lang="en" ng-app="StarterApp">
+                <body layout="column" ng-controller="AppCtrl">
+                  <md-toolbar layout="row">
+                    <div class="md-toolbar-tools">
+                      <h1>DASHBOARD</h1>
+                    </div>
+                  </md-toolbar>
+                  <md-content layout="row" flex>
+                      <md-tabs label="Section 1" flex>
+                        <md-tab label="Finished" flex>
+                            <md-content layout-padding>
+                            <div>
+                              <!--tab 1 body -->
+                              <table class="table table-striped table-bordered table-advance table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                          <i class="fa fa-user"></i> Client </th>
+                                          <th>
+                                            <i class="fa fa-user-plus"></i> Assigned To </th>
+                                          <th>
+                                            <i class="fa fa-clock-o"></i> Duration </th>
+                                          <th>
+                                            <i class="fa fa-user"></i> Category </th>
+                                          <th style="width: 120px">
+                                            <i class="fa fa-reply"></i> Survey </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="success"></div>
+                                            <a href="javascript:;"> Valeera Sanguinar </a>
+                                        </td>
+                                        <td class="hidden-xs">  Donald Dunn </td>
+                                          <td> 6 minutes </td>
+                                          <td> Billing </td>
+                                        <td>
+                                          <md-button class="md-raised md-primary">View</md-button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="info"> </div>
+                                            <a href="javascript:;"> Reno Jackson </a>
+                                        </td>
+                                        <td class="hidden-xs"> Laurie Bream </td>
+                                          <td> 9 minutes </td>
+                                          <td> Debugging </td>
+                                        <td>
+                                          <md-button class="md-raised md-primary">View</md-button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="success"> </div>
+                                            <a href="javascript:;"> Leeroy Jenkins </a>
+                                        </td>
+                                        <td class="hidden-xs"> Jian Yang </td>
+                                          <td> 10 minutes </td>
+                                          <td> Security </td>
+                                        <td>
+                                          <md-button class="md-raised md-primary">View</md-button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="success"> </div>
+                                            <a href="javascript:;"> Tirion Foldring </a>
+                                        </td>
+                                        <td class="hidden-xs"> Richard Hendricks </td>
+                                          <td> 7 minutes </td>
+                                          <td> Security </td>
+                                        <td>
+                                          <md-button class="md-raised md-primary">View</md-button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="warning"> </div>
+                                            <a href="javascript:;"> Mike Hawk </a>
+                                        </td>
+                                        <td class="hidden-xs"> Peter Gregory </td>
+                                          <td> 4 minutes </td>
+                                          <td> Consultation </td>
+                                        <td>
+                                          <md-button class="md-raised md-primary">View</md-button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                              <!-- tab 1 body end -->
+                            </div>
+                          </md-content>
+                        </md-tab>
+              <!--end of first tab-->
+                        <md-tab label="Pending">
+                          <md-content layout-padding>
+                            <div>
+                              <!--tab 2 body -->
+                              <table class="table table-striped table-bordered table-advance table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                          <i class="fa fa-user"></i> Client </th>
+                                          <th>
+                                            <i class="fa fa-user-plus"></i> Assigned To </th>
+                                          <th>
+                                            <i class="fa fa-clock-o"></i> Scheduled Time </th>
+                                          <th>
+                                            <i class="fa fa-file"></i> Category </th>
+                                          <th>
+                                            <i class="fa fa-camera-retro"></i> Start Consultation </th>
+
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="success"></div>
+                                            <a href="javascript:;"> Mike Hunt </a>
+                                        </td>
+                                        <td class="hidden-xs"> Erlich Bachman </td>
+                                          <td> Instant </td>
+                                          <td> Security </td>
+                                        <td style="width: 238px;">
+                                          <md-button class="md-raised md-primary">Start</md-button>
+                                          <md-button class="md-raised md-warn">Warn</md-button
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="success"> </div>
+                                            <a href="javascript:;"> Jaina Proudmore </a>
+                                        </td>
+                                        <td class="hidden-xs"> Bertram Gilfoyle </td>
+                                          <td> 4:45PM </td>
+                                          <td> Press </td>
+                                        <td style="width: 238px;">
+                                          <md-button class="md-raised md-primary">Start</md-button>
+                                          <md-button class="md-raised md-warn">Warn</md-button
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="highlight">
+                                            <div class="warning"> </div>
+                                            <a href="javascript:;"> Edwin VanCleef </a>
+                                        </td>
+                                        <td class="hidden-xs"> Dinesh Chugtai </td>
+                                          <td> 7:00PM </td>
+                                          <td> Billing </td>
+                                        <td style="width: 238px;">
+                                          <md-button class="md-raised md-primary">Start</md-button>
+                                          <md-button class="md-raised md-warn">Warn</md-button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                              <!-- tab 2 body end -->
+                            </div>
+                          </md-content>
+                        </md-tab>
+              <!--end of second tab-->
+                        <md-tab label="Active">
+                          <md-content layout-padding>
+                            <div>
+                              <!--Section 3 body -->
+                              <div class="col-md-12">
+                                <div class="col-md-9">
+                             <iframe src="https://appear.in/your-room-name" width="700" height="600" frameborder="0"></iframe>
+                                </div>
+                                <div class="col-md-3" style="height: 500px;">
+<style>
+/*--------------------
+Mixins
+--------------------*/
+/*--------------------
+Body
+--------------------*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
-.sidebar #leftside-navigation ul,
-.sidebar #leftside-navigation ul ul {
-  margin: -2px 0 0;
+
+/*--------------------
+Chat
+--------------------*/
+.chat {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 300px;
+  height: 80vh;
+  max-height: 600px;
+  z-index: 2;
+  overflow: auto;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+/*--------------------
+Chat Title
+--------------------*/
+.chat-title {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 45px;
+      -ms-flex: 0 1 45px;
+          flex: 0 1 45px;
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+  text-align: left;
+  padding: 10px 10px 10px 50px;
+}
+.chat-title h1, .chat-title h2 {
+  font-weight: normal;
+  font-size: 10px;
+  margin: 0;
   padding: 0;
 }
-.sidebar #leftside-navigation ul li {
-  list-style-type: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.chat-title h2 {
+  font-size: 8px;
+  letter-spacing: 1px;
 }
-.sidebar #leftside-navigation ul li.active > a {
-  color: #1abc9c;
+.chat-title .avatar {
+  position: absolute;
+  z-index: 1;
+  top: 8px;
+  left: 9px;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.24);
 }
-.sidebar #leftside-navigation ul li.active ul {
+.chat-title .avatar img {
+  width: 100%;
+  height: auto;
+}
+
+/*--------------------
+Messages
+--------------------*/
+.messages {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 1 auto;
+      -ms-flex: 1 1 auto;
+          flex: 1 1 auto;
+  overflow: auto;
+  position: relative;
+  width: 100%;
+}
+.messages .messages-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 101%;
+  width: 100%;
+}
+.messages .message {
+  clear: both;
+  float: left;
+  padding: 6px 10px 7px;
+  border-radius: 10px 10px 10px 0;
+  background: rgba(0, 0, 0, 0.1);
+  margin: 8px 0;
+  font-size: 11px;
+  line-height: 1.4;
+  margin-left: 35px;
+  position: relative;
+}
+.messages .message .timestamp {
+  position: absolute;
+  bottom: -15px;
+  font-size: 9px;
+  color: rgba(255, 255, 255, 0.3);
+}
+.messages .message::before {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  border-top: 6px solid rgba(0, 0, 0, 0.1);
+  left: 0;
+  border-right: 7px solid transparent;
+}
+.messages .message .avatar {
+  position: absolute;
+  z-index: 1;
+  bottom: -15px;
+  left: -35px;
+  border-radius: 30px;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(255, 255, 255, 0.24);
+}
+.messages .message .avatar img {
+  width: 100%;
+  height: auto;
+}
+.messages .message.message-personal {
+  float: right;
+  color: #fff;
+  text-align: right;
+  background: -webkit-linear-gradient(330deg, #248A52, #257287);
+  background: linear-gradient(120deg, #1AD6FD, #1D62F0);
+  border-radius: 10px 10px 0 10px;
+  max-width: 100%
+}
+.messages .message.message-personal::before {
+  left: auto;
+  right: 0;
+  border-right: none;
+  border-left: 5px solid transparent;
+  border-top: 4px solid #257287;
+  bottom: -4px;
+}
+.messages .message:last-child {
+  margin-bottom: 30px;
+}
+.messages .message.new {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
+  -webkit-animation: bounce 500ms linear both;
+          animation: bounce 500ms linear both;
+}
+.messages .message.loading::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: '';
   display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  margin-top: 4px;
+  -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+          animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  border: none;
+  -webkit-animation-delay: .15s;
+          animation-delay: .15s;
 }
-.sidebar #leftside-navigation ul li a {
-  color: #aeb2b7;
-  text-decoration: none;
+.messages .message.loading span {
   display: block;
-  padding: 18px 0 18px 25px;
-  font-size: 12px;
-  outline: 0;
-  -webkit-transition: all 200ms ease-in;
-  -moz-transition: all 200ms ease-in;
-  -o-transition: all 200ms ease-in;
-  -ms-transition: all 200ms ease-in;
-  transition: all 200ms ease-in;
-}
-.sidebar #leftside-navigation ul li a:hover {
-  color: #1abc9c;
-}
-.sidebar #leftside-navigation ul li a span {
-  display: inline-block;
-}
-.sidebar #leftside-navigation ul li a i {
+  font-size: 0;
   width: 20px;
+  height: 10px;
+  position: relative;
 }
-.sidebar #leftside-navigation ul li a i .fa-angle-left,
-.sidebar #leftside-navigation ul li a i .fa-angle-right {
-  padding-top: 3px;
+.messages .message.loading span::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  margin-top: 4px;
+  -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+          animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  margin-left: -7px;
 }
-.sidebar #leftside-navigation ul ul {
-  display: none;
+.messages .message.loading span::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  content: '';
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  z-index: 2;
+  margin-top: 4px;
+  -webkit-animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+          animation: ball 0.45s cubic-bezier(0, 0, 0.15, 1) alternate infinite;
+  margin-left: 7px;
+  -webkit-animation-delay: .3s;
+          animation-delay: .3s;
 }
-.sidebar #leftside-navigation ul ul li {
-  background: #23313f;
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-  border-bottom: none;
+
+/*--------------------
+Message Box
+--------------------*/
+.message-box {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 40px;
+      -ms-flex: 0 1 40px;
+          flex: 0 1 40px;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  position: relative;
 }
-.sidebar #leftside-navigation ul ul li a {
-  font-size: 12px;
-  padding-top: 13px;
-  padding-bottom: 13px;
-  color: #aeb2b7;
+.message-box .message-input {
+  background: none;
+  border: none;
+  outline: none !important;
+  resize: none;
+  font-size: 11px;
+  margin: 0;
+  padding-right: 20px;
+  width: 400px;
+}
+.message-box textarea:focus:-webkit-placeholder {
+  color: transparent;
+}
+.message-box .message-submit {
+  position: absolute;
+  z-index: 1;
+  top: 9px;
+  right: 10px;
+  color: #fff;
+  border: none;
+  background: #248A52;
+  font-size: 10px;
+  text-transform: uppercase;
+  line-height: 1;
+  padding: 6px 10px;
+  border-radius: 10px;
+  outline: none !important;
+  -webkit-transition: background .2s ease;
+  transition: background .2s ease;
+}
+.message-box .message-submit:hover {
+  background: #1D7745;
+}
+
+/*--------------------
+Custom Srollbar
+--------------------*/
+.mCSB_scrollTools {
+  margin: 1px -3px 1px 0;
+  opacity: 0;
+}
+
+.mCSB_inside > .mCSB_container {
+  margin-right: 0px;
+  padding: 0 10px;
+}
+
+.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/*--------------------
+Bounce
+--------------------*/
+@-webkit-keyframes bounce {
+  0% {
+    -webkit-transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  4.7% {
+    -webkit-transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  9.41% {
+    -webkit-transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  14.11% {
+    -webkit-transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  18.72% {
+    -webkit-transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  24.32% {
+    -webkit-transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  29.93% {
+    -webkit-transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  35.54% {
+    -webkit-transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  41.04% {
+    -webkit-transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  52.15% {
+    -webkit-transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  63.26% {
+    -webkit-transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  85.49% {
+    -webkit-transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  100% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+}
+@keyframes bounce {
+  0% {
+    -webkit-transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  4.7% {
+    -webkit-transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.45, 0, 0, 0, 0, 0.45, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  9.41% {
+    -webkit-transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.883, 0, 0, 0, 0, 0.883, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  14.11% {
+    -webkit-transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.141, 0, 0, 0, 0, 1.141, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  18.72% {
+    -webkit-transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.212, 0, 0, 0, 0, 1.212, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  24.32% {
+    -webkit-transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.151, 0, 0, 0, 0, 1.151, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  29.93% {
+    -webkit-transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.048, 0, 0, 0, 0, 1.048, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  35.54% {
+    -webkit-transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.979, 0, 0, 0, 0, 0.979, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  41.04% {
+    -webkit-transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.961, 0, 0, 0, 0, 0.961, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  52.15% {
+    -webkit-transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.991, 0, 0, 0, 0, 0.991, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  63.26% {
+    -webkit-transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1.007, 0, 0, 0, 0, 1.007, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  85.49% {
+    -webkit-transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(0.999, 0, 0, 0, 0, 0.999, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+  100% {
+    -webkit-transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+            transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+  }
+}
+@-webkit-keyframes ball {
+  from {
+    -webkit-transform: translateY(0) scaleY(0.8);
+            transform: translateY(0) scaleY(0.8);
+  }
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
+}
+@keyframes ball {
+  from {
+    -webkit-transform: translateY(0) scaleY(0.8);
+            transform: translateY(0) scaleY(0.8);
+  }
+  to {
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
+  }
 }
 
 </style>
 
-<style>
-  .md-toolbar-tools h1 {
-  font-size: inherit;
-  font-weight: inherit;
-  margin: inherit;
+<!--CHAT HTML-->
+<div class="chat" style="width: 470px; left: 80px; top: 300px">
+  <div class="chat-title">
+    <h1>Edwin VanCleef</h1>
+    <h2> Billing Question </h1>
+    <figure class="avatar">
+      <img src="http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png" /></figure>
+  </div>
+  <div class="messages">
+    <div class="messages-content"></div>
+  </div>
+  <div class="message-box">
+    <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
+    <button type="submit" class="message-submit">Send</button>
+  </div>
+
+</div>
+<div class="bg"></div>
+    <!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
+
+<!--CHAT SCRIPT-->
+<script>
+var $messages = $('.messages-content'),
+    d, h, m,
+    i = 0;
+
+$(window).load(function() {
+  $messages.mCustomScrollbar();
+  setTimeout(function() {
+    fakeMessage();
+  }, 100);
+});
+
+function updateScrollbar() {
+  $messages.mCustomScrollbar("update").mCustomScrollbar('scrollTo', 'bottom', {
+    scrollInertia: 10,
+    timeout: 0
+  });
 }
-</style>
-<!--admin panel-->
-<div class="container-admin" style="margin-left: 240px;">
-<html lang="en" ng-app="StarterApp">
-  <head>
-    <title>Angular Material - Tabs and Responsive</title>
-  </head>
-  <body layout="column" ng-controller="AppCtrl">
 
-    <md-toolbar layout="row">
-      <div class="md-toolbar-tools">
-        <h1>Hello World</h1>
-      </div>
-    </md-toolbar>
+function setDate(){
+  d = new Date()
+  if (m != d.getMinutes()) {
+    m = d.getMinutes();
+    $('<div class="timestamp">' + d.getHours() + ':' + m + '</div>').appendTo($('.message:last'));
+  }
+}
 
-    <md-content layout="row" flex>
-        <md-tabs flex>
-          <md-tab label="Form" flex>
-            <md-content layout="row" flex style="height:100%">
-              
+function insertMessage() {
+  msg = $('.message-input').val();
+  if ($.trim(msg) == '') {
+    return false;
+  }
+  $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+  setDate();
+  $('.message-input').val(null);
+  updateScrollbar();
+  setTimeout(function() {
+    fakeMessage();
+  }, 1000 + (Math.random() * 20) * 100);
+}
 
-              <div layout="column" flex id="content">
-                  <md-content layout="row" flex class="md-padding" layout-wrap>
+$('.message-submit').click(function() {
+  insertMessage();
+});
 
-                      <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                        <md-input-container>
-                            <label>First Name</label>
-                            <input ng-model="firstName" />
-                        </md-input-container>
-                      </div>
-                      <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                        <md-input-container>
-                          <label>Last Name</label>
-                          <input ng-model="lastName" />
-                        </md-input-container>
-                      </div>
-                          <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                            <md-input-container>
-                              <label>Size</label>
-                              <md-select ng-model="size">
-                                <md-option value="xs">Xtra Small</md-option>
-                                <md-option value="s">Small</md-option>
-                                <md-option value="m">Medium</md-option>
-                                <md-option value="l">Large</md-option>
-                                <md-option value="xl">Extra Large</md-option>
-                                <md-option value="xxl">Extra Extra Large</md-option>
-                              </md-select>
-                            </md-input-container>
-                          </div>
-                          <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                            <md-input-container>
-                              <label>Favorite Color</label>
-                              <md-select ng-model="size">
-                                <md-option value="r">Red</md-option>
-                                <md-option value="g">Green</md-option>
-                                <md-option value="b">Blue</md-option>
-                                <md-option value="y">Yellow</md-option>
-                                <md-option value="bl">Black</md-option>
-                                <md-option value="w">White</md-option>
-                              </md-select>
-                            </md-input-container>
-                          </div>
+$(window).on('keydown', function(e) {
+  if (e.which == 13) {
+    insertMessage();
+    return false;
+  }
+})
 
+var Fake = [
+  /*'Hi there, I\'m Edwin.',
+  'Nice to meet you',
+  'Did you need help installing?',
+  'Sure, no problem. Could you share your screen to expediate the process.',
+  'Awesome, thank you. Let\'s get to work.',
+  'Did you need any other help today?',
+  'Great! You\'ll get a survery after this. Have an awesome day.',
+  'Why do you think that?',
+  'Can you explain?',
+  'Anyway I\'ve gotta go now',
+  'It was a pleasure chat with you',
+  'Time to make a new codepen',
+  'Bye',
+  ':)'*/
+]
 
+function fakeMessage() {
+  if ($('.message-input').val() != '') {
+    return false;
+  }
+  $('<div class="message loading new"><figure class="avatar"><img src="http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png" /></figure><span></span></div>').appendTo($('.mCSB_container'));
+  updateScrollbar();
 
-                    <md-content layout="column" flex="100" class="md-whiteframe-3dp">
-                      <md-toolbar layout="row">
-                        <div class="md-toolbar-tools">
-                          <h1>Subsection 1</h1>
-                          <span flex></span>
-                          <md-button class="md-icon-button" aria-label="Collapse" ng-click="toggleExpansion('s1')">
-                            <i class="material-icons" layout-padding>expand_less</i>
-                          </md-button>
-                        </div>
-                      </md-toolbar>
-                      <div layout="row" flex class="md-padding" layout-wrap id="s1">
+  setTimeout(function() {
+    $('.message.loading').remove();
+    $('<div class="message new"><figure class="avatar"><img src="http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png" /></figure>' + Fake[i] + '</div>').appendTo($('.mCSB_container')).addClass('new');
+    setDate();
+    updateScrollbar();
+    i++;
+  }, 1000 + (Math.random() * 20) * 100);
 
-                      <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                        <md-input-container>
-                            <label>First Name</label>
-                            <input ng-model="firstName" />
-                        </md-input-container>
-                      </div>
-                      <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                        <md-input-container>
-                          <label>Last Name</label>
-                          <input ng-model="lastName" />
-                        </md-input-container>
-                      </div>
-                          <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                            <md-input-container>
-                              <label>Size</label>
-                              <md-select ng-model="size">
-                                <md-option value="xs">Xtra Small</md-option>
-                                <md-option value="s">Small</md-option>
-                                <md-option value="m">Medium</md-option>
-                                <md-option value="l">Large</md-option>
-                                <md-option value="xl">Extra Large</md-option>
-                                <md-option value="xxl">Extra Extra Large</md-option>
-                              </md-select>
-                            </md-input-container>
-                          </div>
-                          <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                            <md-input-container>
-                              <label>Favorite Color</label>
-                              <md-select ng-model="size">
-                                <md-option value="r">Red</md-option>
-                                <md-option value="g">Green</md-option>
-                                <md-option value="b">Blue</md-option>
-                                <md-option value="y">Yellow</md-option>
-                                <md-option value="bl">Black</md-option>
-                                <md-option value="w">White</md-option>
-                              </md-select>
-                            </md-input-container>
-                          </div>
+}
+</script>
 
+                                </div>
+                            </div>
+                              <!--Section 3 body end -->
+                            </div>
+                          </md-content>
+                        </md-tab>
+              <!--end of third tab-->
+                      </md-tabs>
 
-                    <md-content layout="column" flex="100" class="md-whiteframe-3dp">
-                      <md-toolbar layout="row">
-                        <div class="md-toolbar-tools">
-                          <h1>Nested Subsection</h1>
-                        </div>
-                      </md-toolbar>
-                      <div layout="row" flex class="md-padding" layout-wrap>
-
-                        <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                        <md-input-container>
-                            <label>Work Email</label>
-                            <input ng-model="workEmail" type="email" />
-                        </md-input-container>
-                      </div>
-
-                      <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                        <md-input-container>
-                            <label>Home Email</label>
-                            <input ng-model="homeEmail" type="email" />
-                        </md-input-container>
-                      </div>
-                      <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                        <md-input-container>
-                            <label>Website</label>
-                            <input ng-model="website" type="url" />
-                        </md-input-container>
-                      </div>
-
-                    <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                      <span style="font-size: x-small; opacity: 0.3">Birthdate<br /></span>
-                        <md-datepicker ng-Model="myDate" md-placeholder="Enter Date"></md-datepicker>
-                    </div>
-
-
-                    <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                      <fieldset class="standard">
-                        <legend><span style="font-size: x-small; opacity: 0.6">Languages</span></legend>
-                        <md-checkbox aria-label="English">English</md-checkbox>
-                        <md-checkbox aria-label="Spanish">Spanish</md-checkbox>
-                        <md-checkbox aria-label="Chinese">Chinese</md-checkbox>
-                        <md-checkbox aria-label="French">French</md-checkbox>
-                        <md-checkbox aria-label="Italian">Italian</md-checkbox>
-                      </fieldset>
-
-                    </div>
-
-                    <div layout-padding flex-xs="100" flex-sm="50" flex-md="33" flex-gt-md="25">
-                      <fieldset class="standard">
-                        <legend><span style="font-size: x-small; opacity: 0.6">Favorite Fruit</span></legend>
-                        <md-radio-group ng-model="data.group1">
-                          <md-radio-button value="Apple" class="md-primary">Apple</md-radio-button>
-                          <md-radio-button value="Banana"> Banana </md-radio-button>
-                          <md-radio-button value="Mango">Mango</md-radio-button>
-                        </md-radio-group>
-                      </fieldset>
-                    </div>
-
-
-                      </div>
-                    </md-content>
-
-                      </div>
-                    </md-content>
 
                   </md-content>
+
+                  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+                  <!-- Angular Material Dependencies -->
+                  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+                  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+                  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+
+                  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
+                <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
+                </body>
+              </html>
+                </div>
+
+
+
+                <!--sidebar-->
+
+                  <aside class="sidebar" style="left: 0px; top: 0px">
+                    <div id="leftside-navigation" class="nano">
+                      <ul class="nano-content">
+                        <li class="active">
+                          <a href=""><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
+                        </li>
+                        <li class="sub-menu">
+                          <a href="javascript:void(0);"><i class="fa fa-group"></i><span>Partners</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                          <ul>
+
+                            <li><a href="">Dinesh Chugtai</a>
+                            </li>
+                            <li><a href="">Richard Hendricks</a>
+                            </li>
+                            <li><a href="">Erlich Bachman</a>
+                            </li>
+                            <li><a href="">Bertram Gilfoyle</a>
+                              </li>
+                            <li><a href="">Nelson Bighetti</a>
+                              </li>
+                            <li><a href="">Donald Dunn</a>
+                              </li>
+                            <li><a href="">Jian Yang</a>
+                          </ul>
+                        </li>
+                        <li class="sub-menu">
+                          <a href="javascript:void(0);"><i class="fa fa-wrench"></i><span>Settings</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                          <ul>
+                            <li><a href="tables-basic.html">Basic Tables</a>
+                            </li>
+
+                            <li><a href="tables-data.html">Data Tables</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="sub-menu">
+                          <a href="javascript:void(0);"><i class="fa fa fa-industry"></i><span>Analytics</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                          <ul>
+                            <li><a href="forms-components.html">Components</a>
+                            </li>
+                            <li><a href="forms-validation.html">Validation</a>
+                            </li>
+                            <li><a href="forms-mask.html">Mask</a>
+                            </li>
+                            <li><a href="forms-wizard.html">Wizard</a>
+                            </li>
+                            <li><a href="forms-multiple-file.html">Multiple File Upload</a>
+                            </li>
+                            <li><a href="forms-wysiwyg.html">WYSIWYG Editor</a>
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="sub-menu">
+                          <a href="javascript:void(0);"><i class="fa fa-envelope"></i><span>Mail</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                          <ul>
+                            <li> <a href="mail-inbox.html">Inbox</a>
+                            </li>
+                            <li><a href="mail-compose.html">Compose Mail</a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </aside>
+                </div>
               </div>
-              </md-content>
-
-
-          </md-tab>
-<!--end of first tab-->
-          <md-tab label="Section 2">
-            <md-content layout-padding>
-              <div>
-                Section 2 Content
-              </div>
-            </md-content>
-          </md-tab>
-<!--end of second tab-->
-          <md-tab label="Section 3">
-            <md-content layout-padding>
-              <div>
-                Section 3 Content
-              </div>
-            </md-content>
-          </md-tab>
-<!--end of third tab-->
-        </md-tabs>
-
-
-    </md-content>
-
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-
-    <!-- Angular Material Dependencies -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.11.2/angular-material.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-material-icons/0.6.0/angular-material-icons.min.js"></script>
-  </body>
-</html>
-  </div>
-</div>
-
-
-  <!--sidebar-->
-</div>
-    <aside class="sidebar" style="left: 0px; top: 0px">
-      <div id="leftside-navigation" class="nano">
-        <ul class="nano-content">
-          <li class="active">
-            <a href=""><i class="fa fa-dashboard"></i><span>Dashboard</span></a>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:void(0);"><i class="fa fa-cogs"></i><span>UI Elements</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-            <ul>
-
-              <li><a href="ui-alerts-notifications.html">Alerts &amp; Notifications</a>
-              </li>
-              <li><a href="ui-panels.html">Panels</a>
-              </li>
-              <li><a href="ui-buttons.html">Buttons</a>
-              </li>
-              <li><a href="ui-slider-progress.html">Sliders &amp; Progress</a>
-              </li>
-              <li><a href="ui-modals-popups.html">Modals &amp; Popups</a>
-              </li>
-              <li><a href="ui-icons.html">Icons</a>
-              </li>
-              <li><a href="ui-grid.html">Grid</a>
-              </li>
-              <li><a href="ui-tabs-accordions.html">Tabs &amp; Accordions</a>
-              </li>
-              <li><a href="ui-nestable-list.html">Nestable Lists</a>
-              </li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:void(0);"><i class="fa fa-table"></i><span>Tables</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-            <ul>
-              <li><a href="tables-basic.html">Basic Tables</a>
-              </li>
-
-              <li><a href="tables-data.html">Data Tables</a>
-              </li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:void(0);"><i class="fa fa fa-tasks"></i><span>Forms</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-            <ul>
-              <li><a href="forms-components.html">Components</a>
-              </li>
-              <li><a href="forms-validation.html">Validation</a>
-              </li>
-              <li><a href="forms-mask.html">Mask</a>
-              </li>
-              <li><a href="forms-wizard.html">Wizard</a>
-              </li>
-              <li><a href="forms-multiple-file.html">Multiple File Upload</a>
-              </li>
-              <li><a href="forms-wysiwyg.html">WYSIWYG Editor</a>
-              </li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:void(0);"><i class="fa fa-envelope"></i><span>Mail</span><i class="arrow fa fa-angle-right pull-right"></i></a>
-            <ul>
-              <li> <a href="mail-inbox.html">Inbox</a>
-              </li>
-              <li><a href="mail-compose.html">Compose Mail</a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </aside>
-  </div>
-</div>
 
 
 
@@ -440,3 +1575,25 @@ app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav) 
 }]);
 </script>
 <!--admin panel end-->
+<!--ADMIN END -->
+        </div>
+      </div>
+
+  <script src="https://code.jquery.com/ui/1.11.3/jquery-ui.min.js"></script>
+</body>
+
+<!--MODAL START-->
+<script>
+$('.modal-content').resizable({
+      //alsoResize: ".modal-dialog",
+      minHeight: 340,
+      minWidth: 340
+    });
+    $('.modal-dialog').draggable();
+
+    $('#myModal').on('show.bs.modal', function() {
+      $(this).find('.modal-body').css({
+        'max-height': '100%'
+      });
+    });
+</script>
