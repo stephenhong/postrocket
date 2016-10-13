@@ -644,47 +644,6 @@ Custom tables
 </nav>
 <!--ends here -->
 
-<!--date time picker modal-->
-<div id="form_modal1" class="modal fade" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" style="margin-left: 0px; margin-top: 0px; width: 450px; height: 572px">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                <h4 class="modal-title">Welcome!</h4>
-            </div>
-            <div class="modal-body" style="height: 880px">
-                    <%= render 'form' %>
-            </div>
-            <div class="modal-footer">
-                <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
-                <!--<button class="btn green btn-primary" data-dismiss="modal">Save changes</button>-->
-            </div>
-        </div>
-    </div>
-</div>
-<!--end modal-->
-
-<!--modal2-->
-<div id="form_modal2" class="modal fade" role="dialog" aria-hidden="true">
-    <div class="modal-dialog" style="margin-left: 210px; width: 1500px">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
-                <h4 class="modal-title">Welcome!</h4>
-            </div>
-            <div class="modal-body" style="height: 830px">
-              <iframe src="https://appear.in/uvesty" width="1070" height="800" frameborder="0"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button class="btn grey-salsa btn-outline" data-dismiss="modal" aria-hidden="true">Close</button>
-                <!--<button class="btn green btn-primary" data-dismiss="modal">Save changes</button>-->
-            </div>
-        </div>
-    </div>
-</div>
-<!--end modal-->
-
-
 <!--admin modal -->
 <head>
   <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
@@ -826,11 +785,11 @@ Custom tables
                                             <a href="javascript:;"> Mike Hunt </a>
                                         </td>
                                         <td class="hidden-xs"> Erlich Bachman </td>
-                                          <td> Instant </td>
+                                          <td> 7:00PM </td>
                                           <td> Security </td>
                                         <td style="width: 238px;">
                                           <md-button class="md-raised md-primary">Start</md-button>
-                                          <md-button class="md-raised md-warn">Warn</md-button
+                                          <md-button class="md-raised">Assign to </md-button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -843,7 +802,7 @@ Custom tables
                                           <td> Press </td>
                                         <td style="width: 238px;">
                                           <md-button class="md-raised md-primary">Start</md-button>
-                                          <md-button class="md-raised md-warn">Warn</md-button
+                                          <md-button class="md-raised">Assign to </md-button>
                                         </td>
                                     </tr>
                                     <tr>
@@ -852,11 +811,11 @@ Custom tables
                                             <a href="javascript:;"> Edwin VanCleef </a>
                                         </td>
                                         <td class="hidden-xs"> Dinesh Chugtai </td>
-                                          <td> 7:00PM </td>
-                                          <td> Billing </td>
+                                          <td> Instant </td>
+                                          <td> API Installation </td>
                                         <td style="width: 238px;">
-                                          <md-button class="md-raised md-primary">Start</md-button>
-                                          <md-button class="md-raised md-warn">Warn</md-button>
+                                          <center><md-button ng-disabled="true" class="md-raised md-primary">In Progress...</md-button></center>
+                                          <!--<md-button class="md-raised md-warn">Warn</md-button>-->
                                         </td>
                                     </tr>
                                 </tbody>
@@ -1320,7 +1279,7 @@ Bounce
 <div class="chat" style="width: 470px; left: 80px; top: 300px">
   <div class="chat-title">
     <h1>Edwin VanCleef</h1>
-    <h2> Billing Question </h1>
+    <h2> API Installation </h1>
     <figure class="avatar">
       <img src="http://tr3.cbsistatic.com/fly/bundles/techrepubliccore/images/icons/standard/icon-user-default.png" /></figure>
   </div>
@@ -1333,7 +1292,6 @@ Bounce
   </div>
 
 </div>
-<div class="bg"></div>
     <!--<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>-->
 <script src='https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js'></script>
 
@@ -1391,9 +1349,11 @@ $(window).on('keydown', function(e) {
 })
 
 var Fake = [
-  /*'Hi there, I\'m Edwin.',
-  'Nice to meet you',
-  'Did you need help installing?',
+  'Hi, I need help with installing the Twilio API.',
+  'Can you help me',
+  '?',
+  'Sure. Sharing now'
+  /*'Did you need help installing?',
   'Sure, no problem. Could you share your screen to expediate the process.',
   'Awesome, thank you. Let\'s get to work.',
   'Did you need any other help today?',
@@ -1482,15 +1442,15 @@ function fakeMessage() {
                         <li class="sub-menu">
                           <a href="javascript:void(0);"><i class="fa fa-wrench"></i><span>Settings</span><i class="arrow fa fa-angle-right pull-right"></i></a>
                           <ul>
-                            <li><a href="tables-basic.html">Basic Tables</a>
+                            <li><a href="tables-basic.html">Customize Scheduling Form</a>
                             </li>
 
-                            <li><a href="tables-data.html">Data Tables</a>
+                            <li><a href="tables-data.html">Add or Remove Partners</a>
                             </li>
                           </ul>
                         </li>
                         <li class="sub-menu">
-                          <a href="javascript:void(0);"><i class="fa fa fa-industry"></i><span>Analytics</span><i class="arrow fa fa-angle-right pull-right"></i></a>
+                          <a href="javascript:void(0);"><i class="fa fa-line-chart"></i><span>Analytics</span><i class="arrow fa fa-angle-right pull-right"></i></a>
                           <ul>
                             <li><a href="forms-components.html">Components</a>
                             </li>
